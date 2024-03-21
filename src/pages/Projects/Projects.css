@@ -1,7 +1,5 @@
 .projects {
-    position: relative;
     background-color: #F8EFF4;
-    z-index: 100;
     display: flex;
     flex-direction: column;
 }
@@ -11,9 +9,4 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem 1rem;
-}
-
-.projects-header {
-    text-align: center;
-    margin: 0;
 }

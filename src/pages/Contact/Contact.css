@@ -1,0 +1,24 @@
+.contact {
+  background-color: #F8EFF4;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-icons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.contact-icons > a > svg {
+  width: 45px;
+  height: 45px;
+}
+
+@media (max-width: 768px) {
+  .contact-icons > a > svg {
+    width: 35px;
+    height: 35px;
+  }
+}

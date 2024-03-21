@@ -1,0 +1,21 @@
+.header {
+    margin: 20px;
+    z-index: 1000;
+    position: absolute;
+    right: 0;
+}
+
+.link-button {
+    font-size: 20px;
+    border: none;
+    background: transparent;
+}
+
+.link-button:active,
+.link-button:focus,
+.link-button:focus-visible,
+.link-button:hover {
+    border: none;
+    border-radius: 0;
+    background: rgba(167, 186, 202, 0.3);
+}

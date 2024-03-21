@@ -1,0 +1,29 @@
+.footer {
+    margin: 20px;
+    z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.footer-button {
+    height: 70px !important;
+    width: 70px !important;
+    border-radius: 50%;
+    font-size: 20px;
+    background-color: rgba(28, 16, 49, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-button:hover {
+    background-color: rgba(28, 16, 49, 0.9);
+}
+
+
+.footer-button > svg {
+    filter: invert(78%) sepia(7%) saturate(738%) hue-rotate(165deg) brightness(95%) contrast(87%);
+    height: 20px !important;
+    width: 20px !important;
+}

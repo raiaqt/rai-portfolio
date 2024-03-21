@@ -1,5 +1,11 @@
+span {
+  color: #1c1031;
+}
+
 .section {
   padding: 100px;
+  position: relative;
+  z-index: 100;
 }
 
 .subsection {
@@ -7,16 +13,20 @@
 }
 
 .section-title {
+  font-weight: bold;
   font-size: 60px;
+  align-self: center;
+  display: block;
+  padding: 20px 0;
 }
 
 .section-subtitle {
-  margin: 20px 0;
   font-size: 40px;
+  display: block;
+  padding: 10px 0;
 }
 
 .item-title {
-  color: #1c1031;
   font-size: 25px;
   font-weight: bold;
   display: block;
@@ -24,13 +34,32 @@
 }
 
 .item-text {
+  font-size: 16px;
   display: block;
   margin: 5px 0;
 }
 
 .muted-text {
+  font-size: 16px;
+  color: #1c1031;
   opacity: 0.5;
   margin: 5px 0;
+}
+
+.highlight-text {
+  color: #F8EFF4;
+}
+
+.light-text {
+  color: #a7baca;
+}
+
+.lowlight-text {
+  color: #535d65;
+}
+
+.dark-text {
+  color: #1c1031;
 }
 
 @media (max-width: 768px) {

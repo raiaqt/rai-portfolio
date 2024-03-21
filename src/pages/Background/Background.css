@@ -1,0 +1,41 @@
+.background {
+    display: flex;
+    flex-direction: column;
+}
+
+.background-card {
+  background-color: #F8EFF4;
+  border: 1px solid rgba(28, 16, 49, 0.1);
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.background-title {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  border-right: 1px solid rgba(28, 16, 49, 0.1);
+  border-bottom: none;
+  width: 125px;
+}
+
+.background-text {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .background-card {
+    flex-direction: column;
+  }
+
+  .background-title {
+    padding-right: 0;
+    border-right: none;
+  }
+
+  .background-title > span {
+    border-bottom: 1px solid rgba(28, 16, 49, 0.1);
+  }
+}

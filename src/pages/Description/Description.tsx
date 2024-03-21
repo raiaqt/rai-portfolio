@@ -21,7 +21,7 @@ const Description: React.FC = () => {
   return (
     <div className="description">
       <div className="background-lottie">{View}</div>
-      <span className="description-text">{description.text}</span>
+      <span className="description-text highlight-text">{description.text}</span>
     </div>
   );
 };
