@@ -1,0 +1,24 @@
+.link-card {
+    padding: 20px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(28, 16, 49, 0.1);
+    flex: 1 1 25%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.link-card:hover {
+    border: 1px solid rgba(28, 16, 49, 0.4);
+}
+
+.link-card-icon > svg {
+    width: 45px;
+}
+
+@media (max-width: 768px) {
+    .link-card {
+        flex: 1 1 100%;
+    }
+}

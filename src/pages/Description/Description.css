@@ -1,0 +1,39 @@
+.description {
+    position: relative;
+    background-color: #10091d;
+    z-index: 100;
+    width: 100vw;
+    display: flex;
+}
+
+.description-text {
+    align-items: center;
+    justify-content: center;
+    color: #F8EFF4;
+    font-size: 35px;
+    text-align: center;
+    margin: 100px;
+    z-index: 1000;
+}
+
+.background-lottie {
+    position: absolute;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .introduction {
+        padding: 20px;
+    }
+
+    .introduction-text {
+        font-size: 50px;
+        margin-top: 0px;
+    }
+
+    .description-text {
+        font-size: 20px;
+        text-align: center;
+        margin: 50px;
+    }
+}
