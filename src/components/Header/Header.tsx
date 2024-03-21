@@ -13,23 +13,23 @@ const Header: React.FC = () => {
     <div className="header">
 
           <button
-            className="link-button highlight-text"
+            className="link-button light-text"
             onClick={() => handleClickScroll("projects")}
           >
-            Projects
+            Projects |
           </button>
 
           <button
-            className="link-button highlight-text"
+            className="link-button light-text"
             onClick={() => handleClickScroll("background")}
           >
-            Background
+            Background |
           </button>
           <button
-            className="link-button highlight-text"
+            className="link-button light-text"
             onClick={() => handleClickScroll("contact")}
           >
-            Contact me
+            Contact me |
           </button>
     </div>
   );
