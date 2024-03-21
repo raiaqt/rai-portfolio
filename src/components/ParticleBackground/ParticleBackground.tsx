@@ -11,6 +11,7 @@ import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSl
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   // this should be run only once per application lifetime
   useEffect(() => {
@@ -28,6 +29,7 @@ const ParticleBackground = () => {
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
+    setLoaded(true);
     console.log(container);
   };
 
@@ -98,7 +100,7 @@ const ParticleBackground = () => {
     [],
   );
 
-  if (init) {
+  if (init && loaded) {
     return (
       <Particles
         id="tsparticles"
