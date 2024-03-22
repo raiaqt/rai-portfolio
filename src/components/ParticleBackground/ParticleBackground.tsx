@@ -29,8 +29,8 @@ const ParticleBackground = () => {
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
-    setTimeout(() => setLoaded(true), 3000); // for testing only
-    // setLoaded(true);
+    // setTimeout(() => setLoaded(true), 3000); // for testing only
+    setLoaded(true);
   };
 
   const options: ISourceOptions = useMemo(
