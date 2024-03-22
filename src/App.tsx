@@ -1,18 +1,17 @@
-import Description from './pages/Description/Description'
-import Introduction from './pages/Introduction/Introduction'
-import Projects from './pages/Projects/Projects'
-import Background from './pages/Background/Background'
-import Contact from './pages/Contact/Contact'
-import ParticleBackground from './components/ParticleBackground/ParticleBackground'
-import Footer from './components/Footer/Footer'
+import Description from "./pages/Description/Description";
+import Introduction from "./pages/Introduction/Introduction";
+import Projects from "./pages/Projects/Projects";
+import Background from "./pages/Background/Background";
+import DnaBackground from "./components/DnaBackground/DnaBackground";
+import Contact from "./pages/Contact/Contact";
+import ParticleBackground from "./components/ParticleBackground/ParticleBackground";
+import Footer from "./components/Footer/Footer";
 
-import './App.css'
-
+import "./App.css";
 function App() {
-
   return (
     <>
-    {/* <DnaBackground /> */}
+      <DnaBackground />
       <ParticleBackground />
       <Introduction />
       <Description />
@@ -21,7 +20,7 @@ function App() {
       <Contact />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
