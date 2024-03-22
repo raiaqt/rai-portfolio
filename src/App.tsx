@@ -7,11 +7,13 @@ import ParticleBackground from './components/ParticleBackground/ParticleBackgrou
 import Footer from './components/Footer/Footer'
 
 import './App.css'
+import DnaBackground from './components/DnaBackground/DnaBackground'
 
 function App() {
 
   return (
     <>
+    {/* <DnaBackground /> */}
       <ParticleBackground />
       <Introduction />
       <Description />

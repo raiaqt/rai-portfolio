@@ -6,6 +6,8 @@ import { type Container, type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
+import DnaBackground from "../DnaBackground/DnaBackground";
+
 import "./ParticleBackground.css";
 
 const ParticleBackground = () => {
@@ -29,7 +31,8 @@ const ParticleBackground = () => {
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
-    setLoaded(true);
+    setTimeout(() => setLoaded(true), 3000); // for testing only
+    // setLoaded(true);
   };
 
   const options: ISourceOptions = useMemo(
@@ -101,13 +104,18 @@ const ParticleBackground = () => {
 
   if (init) {
     return (
-      <div className={loaded ? "" : "particle-hidden"}>
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-        />
-      </div>
+      <>
+        <div className={loaded ? "visible" : "hidden"}>
+          <Particles
+            id="tsparticles"
+            particlesLoaded={particlesLoaded}
+            options={options}
+          />
+        </div>
+        <div className={loaded ? "hidden" : "visible"}>
+          <DnaBackground />
+        </div>
+      </>
     );
   }
 

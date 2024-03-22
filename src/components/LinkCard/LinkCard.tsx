@@ -18,7 +18,19 @@ const LinkCard: React.FC<LinkCardProps> = ({ card }) => {
     <a className="link-card" href={card.link} target="_blank">
       <div className="link-card-text">
         <span className="item-title">{card.title}</span>
-        <span className="item-text">{card.text}</span>
+        <span className="item-text">
+          {card.text}
+          {card.title === "Kattis submissions" ? (
+            <a href="https://open.kattis.com/" target="_blank">
+              Kattis
+            </a>
+          ) : null}
+          {card.title === "OnlineJudge submissions" ? (
+            <a href="https://onlinejudge.org/" target="_blank">
+              OnlineJudge
+            </a>
+          ) : null}
+        </span>
         <span className="item-text muted-text">Created {card.year}</span>
       </div>
       <div className="link-card-icon">

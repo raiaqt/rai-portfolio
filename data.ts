@@ -28,14 +28,14 @@ const projects = [
     works: [
       {
         title: "Kattis submissions",
-        text: "Project description",
+        text: "Solutions to algorithm and data structure problems on ",
         year: "2023",
         link: "https://github.com/raiaqt/kattis-submissions",
         github: true,
       },
       {
         title: "OnlineJudge submissions",
-        text: "Project description",
+        text: "Solutions to algorithm and data structure problems on ",
         year: "2023",
         link: "https://github.com/raiaqt/onlinejudge-submissions",
         github: true,

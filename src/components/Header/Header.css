@@ -23,3 +23,9 @@
     border-radius: 0;
     background: rgba(167, 186, 202, 0.3);
 }
+
+@media (max-width: 768px) {
+    .loader {
+      padding-right: 0;
+    }
+  }
