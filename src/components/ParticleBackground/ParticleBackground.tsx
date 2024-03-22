@@ -29,7 +29,8 @@ const ParticleBackground = () => {
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
-    setTimeout(() => setLoaded(true), 2000);
+    // setTimeout(() => setLoaded(true), 2000); // for testing only
+    setLoaded(true);
   };
 
   const options: ISourceOptions = useMemo(
@@ -101,7 +102,7 @@ const ParticleBackground = () => {
 
   if (init) {
     return (
-      <div className={loaded ? "visible" : "hidden"}>
+      <div className={loaded ? "" : "hidden"}>
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
