@@ -6,5 +6,5 @@
 .visible {
     visibility: visible;
     opacity: 1;
-    transition: visibility 2s, opacity 1s linear;
+    transition: visibility 0s, opacity 0.5s linear;
 }
