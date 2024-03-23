@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useLottie } from "lottie-react";
 import dna from "../../assets/lotties/dna.json";
 
-import "./DnaBackground.css";
+import "./DnaBackground.scss";
 
 const DnaBackground: FC = () => {
   const options = {

@@ -6,7 +6,7 @@ import { type Container, type ISourceOptions } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
 
-import "./ParticleBackground.css";
+import "./ParticleBackground.scss";
 
 const ParticleBackground = () => {
   const [init, setInit] = useState(false);
@@ -37,7 +37,7 @@ const ParticleBackground = () => {
     () => ({
       background: {
         color: {
-          value: "#1c1031",
+          value: "#0a0a2c",
         },
       },
       fpsLimit: 30,
@@ -64,10 +64,10 @@ const ParticleBackground = () => {
       },
       particles: {
         color: {
-          value: "#d7356b",
+          value: "#ffffff",
         },
         links: {
-          color: "#d7356b",
+          color: "#ffffff",
           distance: 150,
           enable: true,
           opacity: 0.6,

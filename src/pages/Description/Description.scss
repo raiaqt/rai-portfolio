@@ -1,6 +1,8 @@
+@import "custom/theme";
+
 .description {
     position: relative;
-    background-color: #10091d;
+    background-color: $dark-background;
     z-index: 100;
     width: 100vw;
     display: flex;

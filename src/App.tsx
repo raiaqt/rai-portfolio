@@ -7,7 +7,8 @@ import Contact from "./pages/Contact/Contact";
 import ParticleBackground from "./components/ParticleBackground/ParticleBackground";
 import Footer from "./components/Footer/Footer";
 
-import "./App.css";
+import "./App.scss";
+
 function App() {
   return (
     <>

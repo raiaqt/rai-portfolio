@@ -1,8 +1,8 @@
 import React from "react";
 import { useLottie } from "lottie-react";
 import quotes from "../../assets/lotties/quotes.json";
-import data from "../../../data";
-import "./Description.css";
+import data from "../../../custom/data";
+import "./Description.scss";
 
 const Description: React.FC = () => {
   const { description } = data;
@@ -19,7 +19,7 @@ const Description: React.FC = () => {
   const { View } = useLottie(options);
 
   return (
-    <div className="description">
+    <div className="description dark-background">
       <div className="background-lottie">{View}</div>
       <span className="description-text highlight-text">{description.text}</span>
     </div>

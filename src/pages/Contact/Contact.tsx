@@ -3,14 +3,14 @@ import InstagramSvg from "../../assets/icons/InstagramSvg";
 import GithubSvg from "../../assets/icons/GithubSvg";
 import LinkedinSvg from "../../assets/icons/LinkedinSvg";
 import GoogleSvg from "../../assets/icons/GoogleSvg";
-import data from "../../../data";
-import "./Contact.css";
+import data from "../../../custom/data";
+import "./Contact.scss";
 
 const Contact: React.FC = () => {
   const { links } = data;
 
   return (
-    <div id="contact" className="contact section">
+    <div id="contact" className="contact section light-background">
       <span className="section-title lowlight-text">
         Con<span className="dark-text">tact M</span>e
       </span>

@@ -1,5 +1,15 @@
+@import "custom/theme";
+
 span {
-  color: #1c1031;
+  color: $dark-text;
+}
+
+.light-background {
+  background-color: $light-background;
+}
+
+.dark-background {
+  background-color: $dark-background;
 }
 
 .section {
@@ -41,25 +51,25 @@ span {
 
 .muted-text {
   font-size: 16px;
-  color: #1c1031;
+  color: $dark-text;
   opacity: 0.5;
   margin: 5px 0;
 }
 
 .highlight-text {
-  color: #F8EFF4;
+  color: $highlight-text;
 }
 
 .light-text {
-  color: #a7baca;
+  color: $light-text;
 }
 
 .lowlight-text {
-  color: #535d65;
+  color: $lowlight-text;
 }
 
 .dark-text {
-  color: #1c1031;
+  color: $dark-text;
 }
 
 @media (max-width: 768px) {

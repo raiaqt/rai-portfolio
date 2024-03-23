@@ -1,7 +1,7 @@
 import React from "react";
 import GithubSvg from "../../assets/icons/GithubSvg";
 import LinkSvg from "../../assets/icons/LinkSvg";
-import "./LinkCard.css";
+import "./LinkCard.scss";
 
 interface LinkCardProps {
   card: {

@@ -1,13 +1,13 @@
-import React from "react";
-import data from "../../../data";
-import LinkCard from "../../components/LinkCard/LinkCard";
-import "./Projects.css";
+import React from "react"
+import data from "../../../custom/data"
+import LinkCard from "../../components/LinkCard/LinkCard"
+import "./Projects.scss"
 
 const Projects: React.FC = () => {
   const { projects } = data;
 
   return (
-    <div id="projects" className="projects section">
+    <div id="projects" className="projects section light-background">
       <span className="section-title lowlight-text">Pr<span className="dark-text">oje</span>cts</span>
       {projects.map((category) => (
         <div className="subsection" key={category.title}>

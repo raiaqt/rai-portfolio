@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import "./Footer.scss";
 import UpSvg from "../../assets/icons/UpSvg";
 
 const Footer: React.FC = () => {
