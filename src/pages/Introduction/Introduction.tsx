@@ -8,6 +8,7 @@ const Introduction: React.FC = () => {
       <Header />
       <div className="introduction-content">
         <h1 className="introduction-text light-text">
+          test
           R<span className="highlight-text">AI</span>A
         </h1>
         <p className="introduction-text-p light-text section-subtitle">
