@@ -1,3 +1,5 @@
+@import "custom/theme";
+
 :root {
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
@@ -28,7 +30,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #1c1031;
+  background-color: $dark-background;
 }
 
 h1 {
