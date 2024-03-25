@@ -11,7 +11,7 @@ const Background: React.FC = () => {
         Bac<span className="highlight-text">kgro</span>und
       </span>
       {background.map((item) => (
-        <div key={item.title} className="background-card light-background">
+        <div key={item.title} className="background-card">
           <div className="background-title">
             <span className="item-title muted-text">{item.title}</span>
           </div>

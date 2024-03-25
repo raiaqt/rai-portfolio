@@ -1,8 +1,8 @@
 import { faker } from '@faker-js/faker';
 
 const introduction = {
-  title: faker.word.noun().toUpperCase(),
-  text: faker.lorem.words(10),
+  title: "YOUR NAME",
+  text: "And a brief description of you",
 };
 
 const description = {
@@ -40,6 +40,33 @@ const projects = [
         link: "/",
         year: "2024",
         github: true,
+      },
+    ],
+  },
+  {
+    title: faker.lorem.words(3),
+    text: faker.lorem.words(4),
+    works: [
+      {
+        title: faker.word.noun(),
+        text: faker.lorem.sentence(),
+        link: "/",
+        year: "2024",
+        github: true,
+      },
+      {
+        title: faker.word.noun(),
+        text: faker.lorem.sentence(),
+        link: "/",
+        year: "2024",
+        github: true,
+      },
+      {
+        title: faker.word.noun(),
+        text: faker.lorem.sentence(),
+        link: "/",
+        year: "2024",
+        github: false,
       },
     ],
   },
