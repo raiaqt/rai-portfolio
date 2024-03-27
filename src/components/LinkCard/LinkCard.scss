@@ -4,10 +4,29 @@
     background-color: white;
     border: 1px solid rgba(28, 16, 49, 0.1);
     flex: 1 1 25%;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    max-width: 768px;
+}
+
+.link-card-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.link-card-image > * {
+    width: 100%;
+    max-width: 500px;
+    width: 100%;
+}
+
+.link-card-content {
     display: flex;
     gap: 20px;
     justify-content: space-between;
-    border-radius: 5px;
 }
 
 .link-card:hover {

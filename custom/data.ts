@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 const introduction = {
   title: "YOUR NAME",
@@ -20,6 +20,7 @@ const projects = [
         link: "/",
         year: "2024",
         github: true,
+        image: "placeholder.png",
       },
     ],
   },
@@ -33,6 +34,7 @@ const projects = [
         link: "/",
         year: "2024",
         github: true,
+        image: "placeholder.png",
       },
       {
         title: faker.word.noun(),
@@ -78,10 +80,7 @@ const background = [
     data: {
       title: faker.word.verb(),
       subtitle: faker.lorem.words(3),
-      text: [
-        faker.lorem.words(10),
-        faker.lorem.words(15)
-      ]
+      text: [faker.lorem.words(10), faker.lorem.words(15)],
     },
   },
   {
@@ -89,10 +88,7 @@ const background = [
     data: {
       title: faker.word.verb(),
       subtitle: faker.lorem.words(3),
-      text: [
-        faker.lorem.words(1),
-        '2012-2016',
-      ]
+      text: [faker.lorem.words(1), "2012-2016"],
     },
   },
 ];
