@@ -18,7 +18,7 @@ const LinkCard: React.FC<LinkCardProps> = ({ card }) => {
   return (
     <a className="link-card" href={card.link} target="_blank">
       <div className="link-card-image">
-        <img src={`/src/assets/images/${card.image || "placeholder.png"}`} />
+        <img src={`public/images/${card.image || "placeholder.png"}`} />
       </div>
       <div className="link-card-content">
         <div className="link-card-text">
