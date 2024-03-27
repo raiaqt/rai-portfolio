@@ -15,10 +15,13 @@ interface LinkCardProps {
 }
 
 const LinkCard: React.FC<LinkCardProps> = ({ card }) => {
+  const publicUrl = '';
+  // const publicUrl = '/public'; // for dev testing
+
   return (
     <a className="link-card" href={card.link} target="_blank">
       <div className="link-card-image">
-        <img src={`images/${card.image || "placeholder.png"}`} />
+        <img src={`${publicUrl}/images/${card.image || "placeholder.png"}`} />
       </div>
       <div className="link-card-content">
         <div className="link-card-text">
