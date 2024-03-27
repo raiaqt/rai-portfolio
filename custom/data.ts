@@ -4,7 +4,7 @@ const introduction = {
 };
 
 const description = {
-  text: `Bringing exploratory mindset to technical leadership,
+  text: `Bringing exploratory mindset to technical leadership
         with six years of experience in software development and computational research`,
 };
 
