@@ -49,13 +49,13 @@ const sidequests = [
   {
     title: "Pilates",
     symbol: "◐",
-    text: "Reformer strength and control, a regular thread on the feed.",
+    text: "Strength, alignment, and control. Building a body that moves with intention.",
     gradient: "pilates",
     image: "feed-pilates.jpg",
     likes: 142,
     comments: 8,
-    started: "2021",
-    progress: "2–3x/week · reformer + mat",
+    started: "2025",
+    progress: "2–3x/week",
     aspect: "portrait",
   },
   {
@@ -97,13 +97,13 @@ const sidequests = [
   {
     title: "Aerial",
     symbol: "◆",
-    text: "Silks, hoops, and finding new ways to hang around.",
+    text: "Inversions, dance, and art. Moving in the aerial hammock.",
     gradient: "aerial",
     image: "feed-aerial.jpg",
     likes: 131,
     comments: 9,
-    started: "2022",
-    progress: "Silks + hoop · still learning",
+    started: "2026",
+    progress: "still learning",
     aspect: "square",
   },
 ];

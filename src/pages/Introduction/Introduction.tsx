@@ -5,7 +5,7 @@ import data from "../../../custom/data";
 import "./Introduction.scss";
 
 const Introduction: React.FC = () => {
-  const { introduction, links, movementPillars } = data;
+  const { introduction, links } = data;
   const { nerdSide, movementSide } = introduction;
 
   return (
@@ -28,15 +28,12 @@ const Introduction: React.FC = () => {
               <span className="role-movement">{movementSide.badge}</span>
             </p>
 
-            <p className="introduction-pillars">{movementPillars.join(" · ")}</p>
-
             <p className="introduction-tagline">
               <span className="tagline-bracket">&lt;</span>
               {nerdSide.tagline}
               <span className="tagline-bracket"> /&gt;</span>
               <span className="tagline-cursor" aria-hidden="true">_</span>
             </p>
-            <p className="introduction-subtagline">{movementSide.tagline}</p>
             <a
               className="introduction-link"
               href={links.website}

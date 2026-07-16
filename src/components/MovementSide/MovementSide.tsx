@@ -30,12 +30,7 @@ const SidequestLink: React.FC<SidequestLinkProps> = ({
     </div>
 
     <div className="sidequest-link-body">
-      <div className="sidequest-link-header">
-        <h3 className="sidequest-link-title">{quest.title}</h3>
-        <span className="sidequest-link-cta" aria-hidden="true">
-          →
-        </span>
-      </div>
+      <h3 className="sidequest-link-title">{quest.title}</h3>
       {variant === "featured" && (
         <>
           <p className="sidequest-link-text">{quest.text}</p>

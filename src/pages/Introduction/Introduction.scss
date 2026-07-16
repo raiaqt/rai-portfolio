@@ -128,16 +128,6 @@
   flex-wrap: wrap;
 }
 
-.introduction-pillars {
-  font-family: "Cormorant Garamond", "Raleway", serif;
-  font-size: clamp(14px, 1.6vw, 16px);
-  font-style: italic;
-  color: rgba(244, 194, 215, 0.75);
-  margin: 0 0 24px;
-  letter-spacing: 0.02em;
-  line-height: 1.5;
-}
-
 .role-dev,
 .role-movement {
   backdrop-filter: blur(12px);
@@ -192,7 +182,7 @@
   font-size: clamp(15px, 2vw, 20px);
   font-weight: 400;
   color: $nerd-mint;
-  margin: 0 0 12px;
+  margin: 0 0 28px;
   letter-spacing: 0.02em;
 }
 
@@ -205,17 +195,6 @@
   color: $soft-pink;
   animation: blink 1.2s step-end infinite;
   margin-left: 2px;
-}
-
-.introduction-subtagline {
-  font-family: "Cormorant Garamond", "Raleway", serif;
-  font-size: clamp(20px, 2.6vw, 28px);
-  font-weight: 400;
-  font-style: italic;
-  color: rgba(250, 245, 247, 0.78);
-  margin: 0 0 28px;
-  letter-spacing: 0.02em;
-  line-height: 1.35;
 }
 
 .introduction-link {
