@@ -1,50 +1,31 @@
 @import "custom/theme";
 
-$instagram-gradient: linear-gradient(
-  45deg,
-  #f09433 0%,
-  #e6683c 25%,
-  #dc2743 50%,
-  #cc2366 75%,
-  #bc1888 100%
-);
-$instagram-feed-bg: #fafafa;
-
 .movement-side {
   padding-top: 40px;
   padding-bottom: 64px;
   min-height: 100%;
 }
 
-.instagram-profile {
+.movement-profile {
   margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
 }
 
-.instagram-profile-header {
+.movement-profile-header {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 16px;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
-.instagram-profile-avatar-wrap {
+.movement-profile-avatar {
   flex-shrink: 0;
-  padding: 3px;
-  border-radius: 50%;
-  background: $instagram-gradient;
-}
-
-.instagram-profile-avatar {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  border: 3px solid $movement-background;
-  background:
-    linear-gradient(145deg, rgba(244, 194, 215, 0.55) 0%, rgba(232, 93, 117, 0.25) 100%),
-    rgba(255, 255, 255, 0.95);
+  border: 2px solid rgba(232, 153, 173, 0.45);
+  background: rgba(255, 255, 255, 0.85);
   overflow: hidden;
+  box-shadow: 0 4px 14px rgba(232, 93, 117, 0.12);
 
   img {
     width: 100%;
@@ -54,37 +35,13 @@ $instagram-feed-bg: #fafafa;
   }
 }
 
-.instagram-profile-stats {
-  display: flex;
-  gap: 20px;
-  flex: 1;
+.movement-profile-intro {
+  min-width: 0;
 }
 
-.instagram-profile-stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  min-width: 56px;
-}
-
-.instagram-profile-stat-value {
+.movement-profile-handle {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: $strong-plum;
-  line-height: 1.1;
-}
-
-.instagram-profile-stat-label {
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  color: rgba(45, 27, 51, 0.62);
-}
-
-.instagram-profile-username {
-  font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: $strong-plum;
   text-decoration: none;
@@ -95,7 +52,7 @@ $instagram-feed-bg: #fafafa;
   }
 }
 
-.instagram-profile-name {
+.movement-profile-name {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 600;
@@ -103,7 +60,7 @@ $instagram-feed-bg: #fafafa;
   margin: 4px 0 0;
 }
 
-.instagram-profile-bio {
+.movement-profile-bio {
   font-family: "Cormorant Garamond", "Raleway", serif;
   font-size: 15px;
   font-style: italic;
@@ -112,7 +69,7 @@ $instagram-feed-bg: #fafafa;
   margin: 8px 0 0;
 }
 
-.instagram-profile-meta {
+.movement-profile-meta {
   font-family: "Raleway", sans-serif;
   font-size: 13px;
   line-height: 1.5;
@@ -120,261 +77,214 @@ $instagram-feed-bg: #fafafa;
   margin: 6px 0 0;
 }
 
-.instagram-profile-follow {
-  display: inline-flex;
-  margin-top: 14px;
-  padding: 7px 22px;
-  border-radius: 8px;
-  border: none;
-  background: #0095f6;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #fff;
-  text-decoration: none;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: #1877f2;
-    color: #fff;
+.movement-section {
+  & + & {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(232, 153, 173, 0.28);
   }
 }
 
-.movement-story {
-  margin-top: 18px;
-}
-
-.movement-story-focus {
-  margin-bottom: 18px;
-}
-
-.movement-story-sidequests-label {
-  display: block;
+.movement-section-label {
   font-family: "Ubuntu Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
   color: rgba(155, 77, 106, 0.72);
-  margin-bottom: 12px;
-}
+  margin: 0 0 14px;
+  font-weight: 400;
 
-.ig-post-grid {
-  column-count: 2;
-  column-gap: 10px;
-}
-
-.ig-post-card {
-  break-inside: avoid;
-  margin-bottom: 10px;
-  border-radius: 12px;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(45, 27, 51, 0.08);
-  box-shadow: 0 2px 10px rgba(45, 27, 51, 0.06);
-  position: relative;
-
-  &--featured {
-    margin-bottom: 0;
-    border-color: rgba(232, 93, 117, 0.22);
-    box-shadow: 0 4px 18px rgba(232, 93, 117, 0.12);
-
-    .ig-post-card-media--portrait,
-    .ig-post-card-media--square {
-      aspect-ratio: 16 / 10;
-    }
-
-    .ig-post-card-caption {
-      font-size: 13px;
-    }
-  }
-}
-
-.ig-post-card-tag {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
-  padding: 4px 8px;
-  border-radius: 999px;
-  background: rgba(45, 27, 51, 0.72);
-  backdrop-filter: blur(6px);
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 9px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.92);
-}
-
-.ig-post-card--featured .ig-post-card-tag {
-  background: rgba(232, 93, 117, 0.88);
-}
-
-.ig-post-card-media {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  background: #efefef;
-
-  &--square {
-    aspect-ratio: 1 / 1;
-  }
-
-  &--portrait {
-    aspect-ratio: 4 / 5;
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-}
-
-.ig-post-card-media-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 24px;
-  height: 24px;
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.45);
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ig-post-media-icon {
-  width: 14px;
-  height: 14px;
-}
-
-.ig-post-card-body {
-  padding: 10px 10px 12px;
-}
-
-.ig-post-card-caption {
-  font-family: "Raleway", sans-serif;
-  font-size: 12px;
-  line-height: 1.45;
-  color: rgba(45, 27, 51, 0.88);
-  margin: 0;
-
-  strong {
-    font-weight: 700;
-    color: $strong-plum;
-  }
-}
-
-.ig-post-card-journey {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin: 8px 0 0;
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.02em;
-  color: rgba(155, 77, 106, 0.85);
-
-  span:nth-child(2) {
+  &::before {
+    content: "// ";
     opacity: 0.5;
   }
 }
 
-.ig-post-card-user {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(45, 27, 51, 0.08);
-}
-
-.ig-post-card-avatar {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
-.ig-post-card-user-meta {
+.sidequest-link-grid {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  min-width: 0;
-  flex: 1;
-}
+  gap: 12px;
 
-.ig-post-card-handle {
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: $strong-plum;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
+  &--compact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
 
-.ig-post-card-since {
-  font-family: "Raleway", sans-serif;
-  font-size: 10px;
-  color: rgba(45, 27, 51, 0.48);
-}
-
-.ig-post-badge {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-}
-
-.ig-post-card-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-top: 10px;
-}
-
-.ig-post-card-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  color: rgba(45, 27, 51, 0.62);
-
-  &--share {
-    margin-left: auto;
+  &--featured {
+    gap: 16px;
   }
 }
 
-.ig-post-action-icon {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
+.sidequest-link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(232, 153, 173, 0.32);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 2px 14px rgba(232, 153, 173, 0.1);
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba(232, 93, 117, 0.48);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 28px rgba(232, 93, 117, 0.18);
+
+    .sidequest-link-cta {
+      color: $strong-coral;
+      transform: translateX(2px);
+    }
+
+    .sidequest-link-media img {
+      transform: scale(1.04);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(232, 93, 117, 0.55);
+    outline-offset: 2px;
+  }
+
+  &--compact {
+    .sidequest-link-media {
+      aspect-ratio: 1;
+    }
+
+    .sidequest-link-body {
+      padding: 12px 12px 14px;
+      border-top: 1px solid rgba(232, 153, 173, 0.18);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .sidequest-link-header {
+      align-items: center;
+    }
+
+    .sidequest-link-title {
+      font-size: 13px;
+    }
+
+    .sidequest-link-cta {
+      font-size: 15px;
+      color: rgba(155, 77, 106, 0.5);
+    }
+  }
+
+  &--featured {
+    .sidequest-link-media {
+      aspect-ratio: 16 / 10;
+    }
+
+    .sidequest-link-body {
+      padding: 16px 18px 18px;
+      gap: 6px;
+    }
+
+    .sidequest-link-title {
+      font-size: 16px;
+    }
+
+    .sidequest-link-cta {
+      font-size: 18px;
+      line-height: 1;
+      color: rgba(155, 77, 106, 0.5);
+    }
+  }
+}
+
+.sidequest-link-media {
+  position: relative;
+  width: 100%;
   flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(45, 27, 51, 0.06);
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
 }
 
-.ig-post-card-action .ig-post-action-icon {
-  opacity: 0.75;
+.sidequest-link-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
 }
 
-.instagram-profile-link {
+.sidequest-link-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.sidequest-link-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: $strong-plum;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sidequest-link-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(45, 27, 51, 0.72);
+  margin: 0;
+}
+
+.sidequest-link-meta {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.02em;
+  color: rgba(155, 77, 106, 0.82);
+  margin: 2px 0 0;
+}
+
+.sidequest-link-cta {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.movement-profile-outlink {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 20px;
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: #0095f6;
+  color: rgba(155, 77, 106, 0.88);
   text-decoration: none;
   transition: color 0.2s ease;
 
   &:hover {
-    color: #1877f2;
+    color: $strong-coral;
   }
 }
 
@@ -384,7 +294,36 @@ $instagram-feed-bg: #fafafa;
     padding-bottom: 48px;
   }
 
-  .instagram-profile-header {
-    gap: 16px;
+  .movement-profile-header {
+    gap: 14px;
+  }
+
+  .sidequest-link--featured .sidequest-link-media {
+    aspect-ratio: 16 / 11;
+  }
+
+  .sidequest-link--featured .sidequest-link-body {
+    padding: 14px 16px 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .sidequest-link-grid--compact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .sidequest-link--compact .sidequest-link-body {
+    padding: 10px 10px 12px;
+  }
+
+  .sidequest-link--compact .sidequest-link-title {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .sidequest-link-grid--compact {
+    grid-template-columns: 1fr;
   }
 }

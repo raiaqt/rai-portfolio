@@ -226,6 +226,7 @@ $linkedin-feed-bg: #eef3f8;
 
 .build-side .social-feed--linkedin {
   max-height: none;
+  min-height: 380px;
 }
 
 .build-side .social-feed--embedded .social-feed-body {
@@ -233,6 +234,7 @@ $linkedin-feed-bg: #eef3f8;
   border: none;
   background: transparent;
   box-shadow: none;
+  min-height: 340px;
 }
 
 @media (max-width: 768px) {

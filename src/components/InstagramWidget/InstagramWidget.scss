@@ -10,6 +10,7 @@ $feed-preview-height-desktop: 560px;
   border-radius: 20px;
   overflow: hidden;
   max-height: calc($feed-preview-height + 120px);
+  min-height: 420px;
   position: relative;
 }
 
@@ -141,7 +142,7 @@ $feed-preview-height-embedded: 380px;
 
 .social-feed-body {
   flex: 1;
-  min-height: 0;
+  min-height: 360px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -156,7 +157,7 @@ $feed-preview-height-embedded: 380px;
 .social-feed-scroll-wrap {
   position: relative;
   flex: 1;
-  min-height: 0;
+  min-height: 320px;
   max-height: $feed-preview-height;
 }
 
@@ -204,22 +205,19 @@ $feed-preview-height-embedded: 380px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
 
   &--loading {
-    [class*="elfsight-app"] {
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-
+    // Keep embeds rendering underneath so mobile browsers still load iframes.
+    [class*="elfsight-app"],
     iframe {
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
+      opacity: 0.001;
+      pointer-events: none;
     }
   }
 
   &--ready {
     [class*="elfsight-app"],
     iframe {
+      opacity: 1;
+      pointer-events: auto;
       animation: feed-reveal 0.25s ease forwards;
     }
   }
@@ -372,20 +370,33 @@ $feed-preview-height-embedded: 380px;
   $feed-preview-height-mobile: 440px;
 
   .social-feed--hero {
-    max-height: calc($feed-preview-height-mobile + 112px);
+    max-height: none;
+    min-height: 480px;
   }
 
   .social-feed--hero .social-feed-body {
     padding: 10px 0;
+    min-height: 420px;
   }
 
   .social-feed--hero .social-feed-scroll-wrap,
   .social-feed--hero .social-feed-scroll {
+    min-height: 380px;
     max-height: $feed-preview-height-mobile;
+  }
+
+  .social-feed--hero .social-feed-embed,
+  .social-feed--hero .social-feed-embed iframe {
+    min-height: 360px !important;
   }
 
   .social-feed--instagram .social-feed-scroll-wrap,
   .social-feed--instagram .social-feed-scroll {
-    max-height: 320px;
+    min-height: 300px;
+    max-height: 360px;
+  }
+
+  .social-feed--instagram.social-feed--embedded {
+    min-height: 380px;
   }
 }

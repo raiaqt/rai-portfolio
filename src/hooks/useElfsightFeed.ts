@@ -66,6 +66,36 @@ export function useElfsightFeedReady() {
       return;
     }
 
+    const refreshEmbed = () => {
+      scheduleElfsightInit();
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          refreshEmbed();
+        }
+      },
+      { rootMargin: "120px", threshold: 0.01 }
+    );
+
+    observer.observe(container);
+    window.addEventListener("orientationchange", refreshEmbed);
+    window.addEventListener("resize", refreshEmbed);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("orientationchange", refreshEmbed);
+      window.removeEventListener("resize", refreshEmbed);
+    };
+  }, []);
+
+  useEffect(() => {
+    const container = embedRef.current;
+    if (!container) {
+      return;
+    }
+
     let finished = false;
     let timeoutTimer: number | undefined;
     let observer: MutationObserver | undefined;

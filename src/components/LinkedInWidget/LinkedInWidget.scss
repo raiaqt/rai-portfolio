@@ -53,7 +53,7 @@ $linkedin-accent-bright: #7ec8e8;
 .social-feed--linkedin .social-feed-body,
 .social-feed--linkedin.social-feed--embedded {
   flex: 1;
-  min-height: 0;
+  min-height: 320px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ $linkedin-accent-bright: #7ec8e8;
 .social-feed--linkedin .social-feed-scroll-wrap {
   position: relative;
   flex: 1;
-  min-height: 0;
+  min-height: 280px;
   max-height: $feed-preview-height;
   border-radius: 10px;
   overflow: hidden;
@@ -143,15 +143,16 @@ $linkedin-accent-bright: #7ec8e8;
   &--loading {
     [class*="elfsight-app"],
     iframe {
-      visibility: hidden !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
+      opacity: 0.001;
+      pointer-events: none;
     }
   }
 
   &--ready {
     [class*="elfsight-app"],
     iframe {
+      opacity: 1;
+      pointer-events: auto;
       animation: linkedin-feed-reveal 0.25s ease forwards;
     }
   }
@@ -276,14 +277,27 @@ $linkedin-accent-bright: #7ec8e8;
 }
 
 @media (max-width: 768px) {
-  $feed-preview-height-mobile: 320px;
+  $feed-preview-height-mobile: 360px;
 
-  .social-feed--linkedin {
-    max-height: calc($feed-preview-height-mobile + 104px);
+  .social-feed--linkedin,
+  .social-feed--linkedin.social-feed--embedded {
+    max-height: none;
+    min-height: 380px;
+  }
+
+  .social-feed--linkedin .social-feed-body,
+  .social-feed--linkedin.social-feed--embedded {
+    min-height: 340px;
   }
 
   .social-feed--linkedin .social-feed-scroll-wrap,
   .social-feed--linkedin .social-feed-scroll {
+    min-height: 300px;
     max-height: $feed-preview-height-mobile;
+  }
+
+  .social-feed--linkedin .social-feed-embed,
+  .social-feed--linkedin .social-feed-embed iframe {
+    min-height: 280px !important;
   }
 }

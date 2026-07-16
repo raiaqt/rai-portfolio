@@ -38,10 +38,11 @@ const description = {
   aside: "CTO at My Powerhouse · coderai.app",
 };
 
-const movementPillars = ["Pilates", "Climbing", "Freediving", "Hiking", "Arts", "Aerial"];
+const movementPillars = ["Pilates", "Bouldering", "Freediving", "Hiking", "Aerial"];
 
 const movementStory = {
-  focus: "Pilates",
+  feed: ["Pilates", "Aerial"],
+  highlights: ["Bouldering", "Freediving", "Hiking"],
 };
 
 const sidequests = [
@@ -58,7 +59,7 @@ const sidequests = [
     aspect: "portrait",
   },
   {
-    title: "Climbing",
+    title: "Bouldering",
     symbol: "△",
     text: "Boulder problems and chalky hands. Problem-solving, different medium.",
     gradient: "climbing",
@@ -92,18 +93,6 @@ const sidequests = [
     started: "2018",
     progress: "Weekend trails · chasing summits",
     aspect: "square",
-  },
-  {
-    title: "Arts",
-    symbol: "◇",
-    text: "Creative sidequests, making things just because.",
-    gradient: "arts",
-    image: "feed-arts.jpg",
-    likes: 84,
-    comments: 6,
-    started: "2020",
-    progress: "Ongoing · making for fun",
-    aspect: "portrait",
   },
   {
     title: "Aerial",
@@ -169,7 +158,7 @@ const instagram = {
   username: "raiaqt",
   profileLabel: "Raia Quitoriano",
   profilePhoto: "raia-instagram-profile.jpg",
-  tagline: "Pilates · Climbing · Freediving · Hiking · Arts · Aerial",
+  tagline: "Pilates · Bouldering · Freediving · Hiking · Aerial",
   seeMoreLabel: "See more on Instagram",
 };
 
