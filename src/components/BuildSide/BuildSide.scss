@@ -1,0 +1,243 @@
+@import "custom/theme";
+
+$linkedin-accent: #5da9c9;
+$linkedin-accent-bright: #7ec8e8;
+$linkedin-feed-bg: #eef3f8;
+
+.build-side {
+  padding-top: 40px;
+  padding-bottom: 64px;
+  min-height: 100%;
+}
+
+.linkedin-profile {
+  margin-bottom: 0;
+}
+
+.linkedin-profile-banner {
+  height: 56px;
+  border-radius: 8px 8px 0 0;
+  background:
+    linear-gradient(105deg, rgba(10, 102, 194, 0.55) 0%, rgba(93, 169, 201, 0.45) 42%, rgba(126, 200, 184, 0.35) 100%),
+    linear-gradient(180deg, rgba(19, 32, 40, 0.2) 0%, rgba(19, 32, 40, 0.85) 100%);
+}
+
+.linkedin-profile-header {
+  position: relative;
+  padding: 0 0 0;
+  margin-top: -28px;
+  border-bottom: none;
+}
+
+.linkedin-profile-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid $nerd-background;
+  background:
+    linear-gradient(145deg, rgba(126, 200, 184, 0.35) 0%, rgba(93, 169, 201, 0.25) 100%),
+    rgba(12, 18, 24, 0.95);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.linkedin-profile-body {
+  margin-top: 12px;
+}
+
+.linkedin-profile-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: $light-text;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $linkedin-accent-bright;
+  }
+}
+
+.linkedin-profile-headline {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(250, 245, 247, 0.78);
+  margin: 6px 0 0;
+}
+
+.linkedin-profile-tagline {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: rgba(126, 200, 184, 0.72);
+  margin: 8px 0 0;
+}
+
+.linkedin-profile-connect {
+  display: inline-flex;
+  margin-top: 14px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(93, 169, 201, 0.55);
+  background: rgba(93, 169, 201, 0.14);
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: $linkedin-accent-bright;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $light-text;
+    border-color: rgba(126, 200, 184, 0.65);
+    background: rgba(126, 200, 184, 0.2);
+  }
+}
+
+.linkedin-featured-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.build-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.build-timeline-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 14px;
+  padding-bottom: 22px;
+  position: relative;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 14px;
+    bottom: -4px;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(126, 200, 184, 0.22) 0%,
+      rgba(126, 200, 184, 0.55) 100%
+    );
+    border-radius: 2px;
+  }
+
+  &:last-child::before {
+    display: none;
+  }
+
+  &--now {
+    .build-timeline-node {
+      width: 14px;
+      height: 14px;
+      margin-left: -1px;
+      background: $nerd-mint;
+      border-color: rgba(126, 200, 184, 0.55);
+      box-shadow: 0 0 14px rgba(126, 200, 184, 0.45);
+    }
+
+    .build-timeline-role {
+      color: $light-text;
+    }
+  }
+}
+
+.build-timeline-track {
+  display: flex;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.build-timeline-node {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(12, 18, 24, 0.95);
+  border: 2px solid rgba(126, 200, 184, 0.45);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.build-timeline-body {
+  min-width: 0;
+}
+
+.build-timeline-tag {
+  display: inline-block;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(126, 200, 184, 0.62);
+  margin-bottom: 4px;
+}
+
+.build-timeline-item--now .build-timeline-tag {
+  color: $nerd-mint;
+}
+
+.build-timeline-role {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: rgba(250, 245, 247, 0.88);
+  margin: 0;
+}
+
+.build-timeline-company {
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(126, 200, 184, 0.72);
+  margin: 3px 0 0;
+
+  &--link {
+    display: inline-block;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $nerd-mint;
+    }
+  }
+}
+
+.build-side .social-feed--linkedin {
+  max-height: none;
+}
+
+.build-side .social-feed--embedded .social-feed-body {
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .build-side {
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+}

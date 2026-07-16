@@ -1,0 +1,391 @@
+@import "custom/theme";
+
+$feed-preview-height: 520px;
+$feed-preview-height-desktop: 560px;
+
+.social-feed--hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: calc($feed-preview-height + 120px);
+  position: relative;
+}
+
+$instagram-feed-bg: #fafafa;
+$instagram-accent: #0095f6;
+$feed-preview-height-embedded: 380px;
+
+.social-feed--instagram {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: calc($feed-preview-height-embedded + 56px);
+}
+
+.social-feed--instagram.social-feed--embedded {
+  max-height: calc($feed-preview-height-embedded + 56px);
+}
+
+.social-feed--instagram .social-feed-scroll-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  max-height: $feed-preview-height-embedded;
+  border-radius: 4px;
+  overflow: hidden;
+  background: $instagram-feed-bg;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.social-feed--instagram .social-feed-scroll {
+  height: 100%;
+  max-height: $feed-preview-height-embedded;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+}
+
+.social-feed--instagram .social-feed-fade {
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(250, 250, 250, 0.85) 55%,
+    rgba(250, 250, 250, 0.98) 100%
+  );
+  height: 48px;
+}
+
+.social-feed--instagram .social-feed-embed {
+  min-height: 300px;
+  background: $instagram-feed-bg;
+  border-radius: 0;
+  box-shadow: none;
+
+  iframe {
+    background: $instagram-feed-bg;
+    min-height: 300px !important;
+  }
+}
+
+.social-feed--instagram .social-feed-loader {
+  background:
+    radial-gradient(circle at 30% 40%, rgba(244, 194, 215, 0.2) 0%, transparent 45%),
+    $instagram-feed-bg;
+  border-radius: 0;
+}
+
+.social-feed--instagram .social-feed-see-more {
+  margin: 10px 0 0;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 149, 246, 0.35);
+  background: rgba(0, 149, 246, 0.08);
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 600;
+  color: $instagram-accent;
+
+  &:hover {
+    color: #fff;
+    background: $instagram-accent;
+    border-color: $instagram-accent;
+  }
+}
+
+.social-feed--instagram.social-feed--embedded {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 4px 14px;
+  flex-shrink: 0;
+}
+
+.social-feed-label {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: $nerd-mint;
+
+  &::before {
+    content: "// ";
+    opacity: 0.5;
+  }
+}
+
+.social-feed-handle {
+  font-family: "Cormorant Garamond", "Raleway", serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+  color: $soft-pink;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $strong-coral;
+  }
+}
+
+.social-feed-body {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(255, 107, 74, 0.06) 0%, rgba(244, 194, 215, 0.04) 50%, rgba(45, 212, 168, 0.04) 100%),
+    rgba(20, 14, 26, 0.85);
+  box-shadow: inset 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.social-feed-scroll-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  max-height: $feed-preview-height;
+}
+
+.social-feed-scroll {
+  height: 100%;
+  max-height: $feed-preview-height;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244, 194, 215, 0.35) transparent;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(244, 194, 215, 0.35);
+    border-radius: 3px;
+  }
+}
+
+.social-feed-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(20, 14, 26, 0.75) 45%,
+    rgba(20, 14, 26, 0.98) 100%
+  );
+  pointer-events: none;
+}
+
+.social-feed-embed {
+  width: 100%;
+  min-height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: $dark-background;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+
+  &--loading {
+    [class*="elfsight-app"] {
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    iframe {
+      visibility: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+  }
+
+  &--ready {
+    [class*="elfsight-app"],
+    iframe {
+      animation: feed-reveal 0.25s ease forwards;
+    }
+  }
+
+  // Hide Elfsight's default loader while our overlay is shown
+  [class*="eapps-loading"],
+  [class*="eapps-widget-loading"],
+  [class*="Loader-sc"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .elfsight-app {
+    width: 100% !important;
+    background: transparent !important;
+  }
+
+  // Elfsight can inject duplicate roots on re-init; keep one
+  > [class*="elfsight-app-"] ~ [class*="elfsight-app-"] {
+    display: none !important;
+  }
+
+  iframe:not(:first-of-type) {
+    display: none !important;
+  }
+
+  > div {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+  }
+
+  iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 320px !important;
+    border: none !important;
+    display: block;
+    background: $dark-background;
+  }
+}
+
+.social-feed-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(126, 200, 184, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 70% 60%, rgba(244, 194, 215, 0.14) 0%, transparent 45%),
+    $dark-background;
+  border-radius: 14px;
+}
+
+.social-feed-loader-ring {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid rgba(244, 194, 215, 0.15);
+  border-top-color: $soft-pink;
+  border-right-color: $nerd-mint;
+  animation: feed-spin 0.9s linear infinite;
+}
+
+.social-feed-loader-text {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  color: rgba(244, 194, 215, 0.75);
+
+  &::before {
+    content: "// ";
+    opacity: 0.5;
+  }
+}
+
+@keyframes feed-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes feed-reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.social-feed-see-more {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 12px 0;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 194, 215, 0.25);
+  background: rgba(244, 194, 215, 0.08);
+  font-family: "Cormorant Garamond", "Raleway", serif;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 500;
+  color: $soft-pink;
+  text-decoration: none;
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: $light-text;
+    border-color: rgba(232, 93, 117, 0.45);
+    background: rgba(232, 93, 117, 0.15);
+    gap: 12px;
+  }
+}
+
+.social-feed-see-more-arrow {
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+@media (min-width: 1100px) {
+  .social-feed--hero {
+    max-height: calc($feed-preview-height-desktop + 120px);
+  }
+
+  .social-feed--hero .social-feed-scroll-wrap,
+  .social-feed--hero .social-feed-scroll {
+    max-height: $feed-preview-height-desktop;
+  }
+
+  .social-feed--hero .social-feed-embed {
+    min-width: 560px;
+  }
+}
+
+@media (max-width: 768px) {
+  $feed-preview-height-mobile: 440px;
+
+  .social-feed--hero {
+    max-height: calc($feed-preview-height-mobile + 112px);
+  }
+
+  .social-feed--hero .social-feed-body {
+    padding: 10px 0;
+  }
+
+  .social-feed--hero .social-feed-scroll-wrap,
+  .social-feed--hero .social-feed-scroll {
+    max-height: $feed-preview-height-mobile;
+  }
+
+  .social-feed--instagram .social-feed-scroll-wrap,
+  .social-feed--instagram .social-feed-scroll {
+    max-height: 320px;
+  }
+}

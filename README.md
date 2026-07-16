@@ -1,5 +1,9 @@
 Demo can be viewed on https://demo.raia.codes/
 
+## Instagram feed
+
+The hero Instagram widget uses [Elfsight](https://elfsight.com). The app ID lives in `custom/data.ts` under `instagram.elfsightAppId`. Customize the feed appearance in your Elfsight dashboard.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

@@ -6,25 +6,17 @@ const Background: React.FC = () => {
   const { background } = data;
 
   return (
-    <div id="background" className="background section">
-      <span className="section-title light-text">
-        Bac<span className="highlight-text">kgro</span>und
-      </span>
-      {background.map((item) => (
-        <div key={item.title} className="background-card">
-          <div className="background-title">
-            <span className="item-title muted-text">{item.title}</span>
+    <section id="background" className="column-section column-section--nerd">
+      <span className="column-section-label">background</span>
+      <div className="background-list">
+        {background.map((item) => (
+          <div key={item.title} className="background-item">
+            <span className="background-item-title">{item.title}</span>
+            <span className="background-item-subtitle">{item.subtitle}</span>
           </div>
-          <div className="background-text">
-            <span className="item-title">{item.data.title}</span>
-            <span className="item-text">{item.data.subtitle}</span>
-            {item.data.text.map((text) => (
-              <span key={text} className="item-text muted-text">{text}</span>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   );
 };
 

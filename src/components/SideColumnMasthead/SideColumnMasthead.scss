@@ -1,0 +1,106 @@
+@import "custom/theme";
+
+.side-masthead {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid transparent;
+
+  &--build {
+    border-bottom-color: rgba(126, 200, 184, 0.14);
+  }
+
+  &--move {
+    border-bottom-color: rgba(232, 153, 173, 0.28);
+  }
+}
+
+.side-masthead-side {
+  font-family: "Cormorant Garamond", "Raleway", serif;
+  font-size: 15px;
+  font-style: italic;
+  display: block;
+  margin-bottom: 8px;
+
+  .side-masthead--build & {
+    color: rgba(126, 200, 184, 0.75);
+  }
+
+  .side-masthead--move & {
+    color: rgba(155, 77, 106, 0.8);
+  }
+}
+
+.side-masthead-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(32px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0 0 14px;
+
+  .side-masthead--build & {
+    color: $light-text;
+  }
+
+  .side-masthead--move & {
+    color: $strong-plum;
+  }
+}
+
+.side-masthead-accent {
+  .side-masthead--build & {
+    color: $nerd-mint;
+  }
+
+  .side-masthead--move & {
+    color: $strong-coral;
+  }
+}
+
+.side-masthead-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0;
+  margin-top: 4px;
+}
+
+.side-masthead-badge {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+
+  .side-masthead--build & {
+    color: $nerd-mint;
+    border: 1px solid rgba(126, 200, 184, 0.35);
+    background: rgba(126, 200, 184, 0.1);
+  }
+
+  .side-masthead--move & {
+    font-family: "Cormorant Garamond", "Raleway", serif;
+    font-style: italic;
+    text-transform: lowercase;
+    letter-spacing: 0.04em;
+    color: $strong-wine;
+    border: 1px solid rgba(232, 153, 173, 0.35);
+    background: rgba(255, 255, 255, 0.55);
+  }
+}
+
+.side-masthead-platform {
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+
+  .side-masthead--build & {
+    color: rgba(184, 169, 232, 0.65);
+  }
+
+  .side-masthead--move & {
+    color: rgba(155, 77, 106, 0.65);
+  }
+}

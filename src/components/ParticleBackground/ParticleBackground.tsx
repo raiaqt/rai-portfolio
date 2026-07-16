@@ -27,20 +27,18 @@ const ParticleBackground = () => {
     });
   }, []);
 
-  const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
-    // setTimeout(() => setLoaded(true), 2000); // for testing only
+  const particlesLoaded = async (_container?: Container): Promise<void> => {
     setLoaded(true);
   };
 
   const options: ISourceOptions = useMemo(
     () => ({
-      background: {
+  background: {
         color: {
-          value: "#1c1031",
+          value: "transparent",
         },
       },
-      fpsLimit: 30,
+      fpsLimit: 24,
       interactivity: {
         events: {
           onClick: {
@@ -54,7 +52,7 @@ const ParticleBackground = () => {
         },
         modes: {
           push: {
-            quantity: 4,
+            quantity: 3,
           },
           repulse: {
             distance: 200,
@@ -64,35 +62,35 @@ const ParticleBackground = () => {
       },
       particles: {
         color: {
-          value: "#d7356b",
+          value: ["#7ec8b8", "#b8a9e8", "#2dd4a8"],
         },
         links: {
-          color: "#d7356b",
-          distance: 150,
+          color: "#7ec8b8",
+          distance: 140,
           enable: true,
-          opacity: 0.6,
+          opacity: 0.22,
           width: 1,
         },
         move: {
           enable: true,
           random: false,
-          speed: 2,
+          speed: 0.7,
           straight: false,
         },
         number: {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 38,
         },
         opacity: {
-          value: 0.6,
+          value: 0.32,
         },
         shape: {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 1, max: 4 },
         },
       },
       detectRetina: true,

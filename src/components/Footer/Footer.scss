@@ -1,30 +1,44 @@
+@import "custom/theme";
+
 .footer {
-    margin: 20px;
-    z-index: 1000;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+  margin: 20px;
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  right: 0;
 }
 
 .footer-button {
-    height: 50px !important;
-    width: 50px !important;
-    border-radius: 50%;
-    font-size: 20px;
-    background-color: rgba(28, 16, 49, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-}
+  height: 48px !important;
+  width: 48px !important;
+  border-radius: 50%;
+  border: 1px solid rgba(244, 194, 215, 0.35) !important;
+  background: rgba(26, 18, 32, 0.65) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 
-.footer-button:hover {
-    background-color: rgba(28, 16, 49, 0.9);
+  &:hover {
+    border-color: rgba(232, 93, 117, 0.5) !important;
+    background: rgba(232, 93, 117, 0.2) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(232, 93, 117, 0.2);
+  }
 }
-
 
 .footer-button > svg {
-    filter: invert(78%) sepia(7%) saturate(738%) hue-rotate(165deg) brightness(95%) contrast(87%);
-    height: 20px !important;
-    width: 20px !important;
+  filter: none;
+  fill: $soft-pink;
+  height: 18px !important;
+  width: 18px !important;
+  transition: fill 0.25s ease;
+}
+
+.footer-button:hover > svg {
+  fill: $light-text;
 }

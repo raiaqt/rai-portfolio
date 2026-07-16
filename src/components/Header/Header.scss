@@ -1,31 +1,79 @@
+@import "custom/theme";
+
 .header {
-    margin: 20px;
-    z-index: 1000;
-    position: absolute;
-    right: 0;
-    display: flex;
-    flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 24px 48px;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2px;
+  padding: 6px;
+  border-radius: 999px;
+  @include glass-panel;
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .link-button {
-    font-size: 20px;
-    border: none;
-    background: transparent;
-    display: flex;
-    justify-content: end;
-}
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  color: rgba(250, 245, 247, 0.65);
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+  white-space: nowrap;
 
-.link-button:active,
-.link-button:focus,
-.link-button:focus-visible,
-.link-button:hover {
+  &:hover {
+    color: $soft-pink;
+    background: rgba(244, 194, 215, 0.14);
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
     border: none;
-    border-radius: 0;
-    background: rgba(167, 186, 202, 0.3);
+    outline: none;
+    color: $light-text;
+    background: rgba(232, 93, 117, 0.18);
+  }
 }
 
 @media (max-width: 768px) {
-    .link-button {
-        padding-right: 16px;
-    }
+  .header {
+    padding: 16px 24px;
+  }
+
+  .header-inner {
+    justify-content: center;
+  }
+
+  .header-nav {
+    padding: 4px;
+  }
+
+  .link-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
 }

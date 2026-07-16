@@ -1,6 +1,12 @@
 import React from "react";
 import "./Header.scss";
 
+const navItems = [
+  { id: "nerd-side", label: "Build", hint: "Left column" },
+  { id: "movement-side", label: "Move", hint: "Right column" },
+  { id: "contact", label: "Contact", hint: "Footer" },
+];
+
 const Header: React.FC = () => {
   const handleClickScroll = (id: string) => {
     const element = document.getElementById(id);
@@ -10,26 +16,22 @@ const Header: React.FC = () => {
   };
 
   return (
-    <div className="header">
-      <button
-        className="link-button light-text"
-        onClick={() => handleClickScroll("projects")}
-      >
-        Projects |
-      </button>
-      <button
-        className="link-button light-text"
-        onClick={() => handleClickScroll("background")}
-      >
-        Background |
-      </button>
-      <button
-        className="link-button light-text"
-        onClick={() => handleClickScroll("contact")}
-      >
-        Contact me |
-      </button>
-    </div>
+    <header className="header">
+      <div className="header-inner">
+        <nav className="header-nav">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className="link-button"
+              onClick={() => handleClickScroll(item.id)}
+              title={item.hint}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+      </div>
+    </header>
   );
 };
 

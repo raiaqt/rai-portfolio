@@ -1,110 +1,158 @@
+const columnSides = {
+  build: {
+    sideLabel: "the nerd side",
+    title: "Build",
+    titleAccent: "ild",
+    badge: "developer",
+    platform: "LinkedIn",
+  },
+  move: {
+    sideLabel: "the movement side",
+    title: "Move",
+    titleAccent: "ve",
+    badge: "sidequester",
+    platform: "Instagram",
+  },
+};
+
 const introduction = {
-  title: "RAIA",
-  text: "Software Developer • Not a Robot",
+  title: "Raia",
+  nerdSide: {
+    label: "the nerd side",
+    badge: "developer",
+    tagline: "tech nerd by day",
+    hint: "LinkedIn-style profile, activity feed, and featured projects.",
+  },
+  movementSide: {
+    label: "the movement side",
+    badge: "sidequester",
+    tagline: "chronic sidequester · @raiaqt",
+    hint: "Instagram-style profile, sidequest highlights, and post feed.",
+  },
 };
 
 const description = {
-  text: `Bringing exploratory mindset to technical leadership
-        with six years of experience in software development and computational research`,
+  developer: "I ship code, personal projects, tools, and experiments.",
+  movement:
+    "Off the clock sidequests and the stories that come with them.",
+  aside: "CTO at My Powerhouse · coderai.app",
 };
+
+const movementPillars = ["Pilates", "Climbing", "Freediving", "Hiking", "Arts", "Aerial"];
+
+const movementStory = {
+  focus: "Pilates",
+};
+
+const sidequests = [
+  {
+    title: "Pilates",
+    symbol: "◐",
+    text: "Reformer strength and control, a regular thread on the feed.",
+    gradient: "pilates",
+    image: "feed-pilates.jpg",
+    likes: 142,
+    comments: 8,
+    started: "2021",
+    progress: "2–3x/week · reformer + mat",
+    aspect: "portrait",
+  },
+  {
+    title: "Climbing",
+    symbol: "△",
+    text: "Boulder problems and chalky hands. Problem-solving, different medium.",
+    gradient: "climbing",
+    image: "feed-climbing.jpg",
+    likes: 96,
+    comments: 5,
+    started: "2023",
+    progress: "V4–V5 bouldering · still sending",
+    aspect: "square",
+  },
+  {
+    title: "Freediving",
+    symbol: "∿",
+    text: "Open water, breath holds, and falling in love with the ocean.",
+    gradient: "freediving",
+    image: "feed-freediving.jpg",
+    likes: 218,
+    comments: 14,
+    started: "2024",
+    progress: "30m+ depth · breath hold training",
+    aspect: "portrait",
+  },
+  {
+    title: "Hiking",
+    symbol: "∧",
+    text: "Trails, summits, and the quiet between steps.",
+    gradient: "hiking",
+    image: "feed-hiking.jpg",
+    likes: 173,
+    comments: 11,
+    started: "2018",
+    progress: "Weekend trails · chasing summits",
+    aspect: "square",
+  },
+  {
+    title: "Arts",
+    symbol: "◇",
+    text: "Creative sidequests, making things just because.",
+    gradient: "arts",
+    image: "feed-arts.jpg",
+    likes: 84,
+    comments: 6,
+    started: "2020",
+    progress: "Ongoing · making for fun",
+    aspect: "portrait",
+  },
+  {
+    title: "Aerial",
+    symbol: "◆",
+    text: "Silks, hoops, and finding new ways to hang around.",
+    gradient: "aerial",
+    image: "feed-aerial.jpg",
+    likes: 131,
+    comments: 9,
+    started: "2022",
+    progress: "Silks + hoop · still learning",
+    aspect: "square",
+  },
+];
+
+const experience = [
+  { role: "Software Engineer", company: "Samsung Electronics" },
+  { role: "Lead Engineer", company: "Samsung Electronics" },
+  { role: "Technical Lead", company: "UBX" },
+  { role: "Chief Technology Officer", company: "Powerhouse", link: "https://mypowerhouse.ph" },
+];
 
 const projects = [
   {
-    title: "Software development",
-    text: "Full stack development description",
-    works: [
-      {
-        title: "Portfolio",
-        text: "A portfolio project to show my skills and existing projects",
-        link: "https://github.com/raiaqt/rai-portfolio",
-        year: "2024",
-        github: true,
-        image: "raiaportfolio.png",
-      },
-      {
-        title: "Portfolio Template",
-        text: "A lightweight portfolio for easy portfolio creation",
-        link: "https://github.com/raiaqt/betterai-portfolio",
-        year: "2024",
-        github: true,
-        image: "betteraiportfolio.png",
-      },
-    ],
+    title: "Nightlearn",
+    text: "Learn to Code at Night. Change Your Future by Morning.",
+    link: "http://nightlearn.org",
+    year: "2025",
+    github: false,
+    image: "nightlearn.png",
   },
   {
-    title: "Competitive programming",
-    text: "Competitive programming description",
-    works: [
-      {
-        title: "Kattis submissions",
-        text: "Solutions to algorithm and data structure problems on ",
-        year: "2023",
-        link: "https://github.com/raiaqt/kattis-submissions",
-        github: true,
-        image: "kattis.png",
-      },
-      {
-        title: "OnlineJudge submissions",
-        text: "Solutions to algorithm and data structure problems on ",
-        year: "2023",
-        link: "https://github.com/raiaqt/onlinejudge-submissions",
-        github: true,
-        image: "uva.png",
-      },
-    ],
-  },
-  {
-    title: "Writing",
-    text: "Writing description",
-    works: [
-      {
-        title: "Milton Today",
-        text: "Milton Brewery Workers Organize a Strike to Protest Against Management",
-        link: "https://miltontoday.com.au/milton-brewery-workers-organize-strike-protest-management/",
-        year: "2019",
-        github: false,
-        image: "milton.png",
-      },
-      {
-        title: "Morningside News",
-        text: "Morningside’s Cate Campbell Aims for Gold in Gold Coast 2018",
-        link: "https://morningsidenews.com.au/morningsides-cate-campbell-aims-gold-gold-coast-2018/",
-        year: "2019",
-        github: false,
-        image: "morningside.png",
-      },
-      {
-        title: "Indooroopilly News",
-        text: "17-Year-Old Indooroopilly Swimming Sensation Set to Conquer the Commonwealth Games",
-        link: "https://indooroopillynews.com.au/index.php/17-year-old-indooroopilly-swimming-sensation-set-conquer-commonwealth-games/",
-        year: "2019",
-        github: false,
-        image: "indooroopilly.png",
-      },
-    ],
+    title: "Sortify",
+    text: "Turn your inbox into a smart, focused to-do list.",
+    link: "https://sortify.coderai.app/",
+    year: "2025",
+    github: false,
+    image: "sortify.png",
   },
 ];
 
 const background = [
   {
-    title: "Current work",
-    data: {
-      title: "Lead Engineer",
-      subtitle: "Samsung R&D Institute Philippines",
-      text: [
-        "Develops and deploys new features for multiple enterprise applications",
-        "Leads technical decisions throughout the development lifecycle",
-        "Mentors teammates in various topics such as data structures, algorithms, and front-end development",
-      ],
-    },
+    title: "Chief Technology Officer",
+    subtitle: "My Powerhouse · Aboitiz Power",
   },
   {
-    title: "Education",
-    data: {
-      title: "BS Biochemistry",
-      subtitle: "University of the Philippines Manila",
-      text: ["Cum Laude", "2012-2016"],
-    },
+    title: "BS Biochemistry",
+    subtitle: "University of the Philippines Manila · Cum Laude · 2012–2016",
   },
 ];
 
@@ -113,6 +161,39 @@ const links = {
   github: "https://github.com/raiaqt",
   linkedin: "https://www.linkedin.com/in/raia-quitoriano/",
   gmail: "mailto:rsquitoriano@gmail.com",
+  website: "https://coderai.app",
 };
 
-export default { introduction, description, projects, background, links };
+const instagram = {
+  elfsightAppId: "5971e482-ded4-45ac-a1b2-00e0f817334f",
+  username: "raiaqt",
+  profileLabel: "Raia Quitoriano",
+  profilePhoto: "raia-instagram-profile.jpg",
+  tagline: "Pilates · Climbing · Freediving · Hiking · Arts · Aerial",
+  seeMoreLabel: "See more on Instagram",
+};
+
+const linkedinFeed = {
+  elfsightAppId: "7164089b-08f0-4ed2-b781-2dda8601af89",
+  profileLabel: "Raia Quitoriano",
+  profilePhoto:
+    "https://media.licdn.com/dms/image/v2/D5603AQEPxM8HehUShg/profile-displayphoto-shrink_800_800/B56ZZXgdxCGQAc-/0/1745224852722?e=1785974400&v=beta&t=V8I0qgTrYqDtC6IlkyRduxrFvZ_6YQE6g-XcCje_UtE",
+  headline: "Chief Technology Officer at My Powerhouse · Aboitiz Power",
+  tagline: "Tech nerd by day · shipping code & leading teams",
+  seeMoreLabel: "See more on LinkedIn",
+};
+
+export default {
+  introduction,
+  columnSides,
+  description,
+  movementPillars,
+  movementStory,
+  sidequests,
+  experience,
+  projects,
+  background,
+  links,
+  instagram,
+  linkedinFeed,
+};

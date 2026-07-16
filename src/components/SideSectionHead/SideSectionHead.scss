@@ -1,0 +1,94 @@
+@import "custom/theme";
+
+.side-section-head {
+  margin-bottom: 16px;
+}
+
+.side-section-label {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  display: block;
+  margin-bottom: 8px;
+  position: relative;
+  padding-bottom: 8px;
+
+  &::before {
+    content: "// ";
+    opacity: 0.5;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 28px;
+    height: 2px;
+    border-radius: 2px;
+    @include split-accent-gradient;
+    opacity: 0.5;
+  }
+
+  .side-section-head--build & {
+    color: rgba(126, 200, 184, 0.65);
+  }
+
+  .side-section-head--move & {
+    color: rgba(155, 77, 106, 0.65);
+  }
+}
+
+.side-section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1.2;
+
+  .side-section-head--build & {
+    color: rgba(250, 245, 247, 0.92);
+  }
+
+  .side-section-head--move & {
+    color: $strong-plum;
+  }
+}
+
+.side-section-lede {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 8px 0 0;
+  max-width: 40ch;
+
+  .side-section-head--build & {
+    color: rgba(250, 245, 247, 0.55);
+  }
+
+  .side-section-head--move & {
+    color: rgba(45, 27, 51, 0.58);
+  }
+}
+
+.side-block {
+  padding: 24px 0;
+
+  & + & {
+    border-top: 1px solid transparent;
+  }
+
+  &--build + &--build {
+    border-top-color: rgba(126, 200, 184, 0.12);
+  }
+
+  &--move + &--move {
+    border-top-color: rgba(232, 153, 173, 0.22);
+  }
+
+  &--profile {
+    padding-top: 20px;
+  }
+}

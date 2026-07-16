@@ -1,0 +1,139 @@
+@import "custom/theme";
+
+.column-header {
+  padding-bottom: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header-side {
+  font-family: "Cormorant Garamond", "Raleway", serif;
+  font-size: 15px;
+  font-style: italic;
+  display: block;
+  margin-bottom: 10px;
+
+  .column-header--nerd & {
+    color: rgba(126, 200, 184, 0.75);
+  }
+
+  .column-header--movement & {
+    color: rgba(155, 77, 106, 0.8);
+  }
+}
+
+.column-header-hint {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  .column-header--nerd & {
+    color: rgba(126, 200, 184, 0.75);
+    background: rgba(126, 200, 184, 0.08);
+    border: 1px solid rgba(126, 200, 184, 0.16);
+  }
+
+  .column-header--movement & {
+    color: rgba(155, 77, 106, 0.8);
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(232, 153, 173, 0.28);
+  }
+}
+
+.column-header-label {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+  display: block;
+  margin-bottom: 12px;
+
+  &::before {
+    content: "// ";
+    opacity: 0.5;
+  }
+
+  .column-header--nerd & {
+    color: rgba(126, 200, 184, 0.7);
+  }
+
+  .column-header--movement & {
+    color: rgba(155, 77, 106, 0.7);
+  }
+}
+
+.column-header-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(32px, 3.5vw, 40px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 0 0 16px;
+
+  .column-header--nerd & {
+    color: $light-text;
+  }
+
+  .column-header--movement & {
+    color: $strong-plum;
+  }
+}
+
+.column-header-accent {
+  .column-header--nerd & {
+    color: $nerd-mint;
+  }
+
+  .column-header--movement & {
+    color: $strong-coral;
+  }
+}
+
+.column-header-intro {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 400;
+  margin: 0;
+
+  .column-header--nerd & {
+    color: rgba(250, 245, 247, 0.78);
+  }
+
+  .column-header--movement & {
+    color: rgba(45, 27, 51, 0.78);
+  }
+}
+
+.column-header-meta {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  margin: 14px 0 0;
+  color: rgba(184, 169, 232, 0.55);
+}
+
+.column-header-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+
+  li {
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: rgba(45, 27, 51, 0.75);
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(232, 153, 173, 0.3);
+  }
+}

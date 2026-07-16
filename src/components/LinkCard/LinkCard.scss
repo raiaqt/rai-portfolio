@@ -1,45 +1,205 @@
+@import "custom/theme";
+
 .link-card {
-    padding: 20px;
-    cursor: pointer;
-    background-color: white;
-    border: 1px solid rgba(28, 16, 49, 0.1);
-    flex: 1 1 25%;
-    border-radius: 5px;
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    max-width: 768px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 24px;
+  border: 1px solid $card-border;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  background: linear-gradient(
+    165deg,
+    rgba(126, 200, 184, 0.28) 0%,
+    rgba(45, 212, 168, 0.1) 35%,
+    rgba(26, 18, 32, 0.94) 78%
+  );
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    border-radius: 3px 0 0 3px;
+    background: linear-gradient(180deg, $glow-teal, $nerd-mint);
+    opacity: 0.85;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba(126, 200, 184, 0.35);
+    @include strong-card-shadow;
+  }
+
+  .item-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: $light-text;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+
+  .item-text {
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 300;
+    color: rgba(250, 245, 247, 0.72);
+    margin: 0;
+  }
+
+  .muted-text {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgba(126, 200, 184, 0.65);
+    opacity: 1;
+    margin: 10px 0 0;
+  }
 }
 
 .link-card-image {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: rgba(20, 14, 26, 0.5);
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 40%,
+      rgba(26, 18, 32, 0.85) 100%
+    );
+    pointer-events: none;
+  }
+
+  > img {
     width: 100%;
-    display: flex;
-    justify-content: center;
+    max-height: 140px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.5s ease;
+    opacity: 0.88;
+  }
 }
 
-.link-card-image > * {
-    width: 100%;
-    max-width: 500px;
-    max-height: 309px;
-    object-fit: contain;
+.link-card:hover .link-card-image > img {
+  transform: scale(1.04);
+  opacity: 0.95;
 }
 
 .link-card-content {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 18px 20px 22px;
+  align-items: flex-start;
+  flex: 1;
 }
 
-.link-card:hover {
-    border: 1px solid rgba(28, 16, 49, 0.4);
+.link-card-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+
+  > svg {
+    width: 22px;
+    fill: $nerd-mint;
+  }
 }
 
-.link-card-icon > svg {
-    width: 45px;
+.link-card:hover .link-card-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
-@media (max-width: 768px) {
-    .link-card {
-        flex: 1 1 100%;
+.link-card--linkedin {
+  border-radius: 12px;
+  border: 1px solid rgba(126, 200, 184, 0.2);
+  background: rgba(12, 18, 24, 0.92);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+  &::after {
+    display: none;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba(126, 200, 184, 0.38);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  .item-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: $light-text;
+    margin: 0 0 6px;
+  }
+
+  .item-text {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(250, 245, 247, 0.78);
+  }
+
+  .muted-text {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: rgba(126, 200, 184, 0.72);
+    margin: 10px 0 0;
+  }
+
+  .link-card-image {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border-bottom: 1px solid rgba(126, 200, 184, 0.14);
+
+    &::after {
+      display: none;
     }
+
+    > img {
+      width: 100%;
+      height: auto;
+      min-height: 120px;
+      max-height: 220px;
+      object-fit: contain;
+      object-position: center top;
+      opacity: 1;
+      filter: none;
+      padding: 8px 8px 0;
+    }
+  }
+
+  &:hover .link-card-image > img {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .link-card-content {
+    padding: 14px 16px 16px;
+    gap: 10px;
+  }
+
+  .link-card-icon > svg {
+    width: 18px;
+    fill: rgba(126, 200, 184, 0.85);
+  }
+
+  &:hover .link-card-icon > svg {
+    fill: $nerd-mint;
+  }
 }

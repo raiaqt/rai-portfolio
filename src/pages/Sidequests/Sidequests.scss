@@ -1,0 +1,52 @@
+@import "custom/theme";
+
+.sidequests-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidequest-card {
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid rgba(126, 200, 184, 0.18);
+  background: rgba(126, 200, 184, 0.06);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.sidequest-card-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: rgba(250, 245, 247, 0.9);
+}
+
+.sidequest-card-text {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: rgba(250, 245, 247, 0.62);
+}
+
+.site-split-cell--movement .sidequest-card {
+  border-color: rgba(232, 153, 173, 0.32);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.site-split-cell--movement .sidequest-card-title {
+  color: $strong-plum;
+}
+
+.site-split-cell--movement .sidequest-card-text {
+  color: rgba(45, 27, 51, 0.68);
+}
+
+.site-split-cell--movement .sidequest-card:hover {
+  border-color: rgba(232, 93, 117, 0.4);
+  background: rgba(255, 255, 255, 0.78);
+}

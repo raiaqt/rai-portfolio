@@ -1,6 +1,145 @@
-$light-background: #F8EFF4;
-$dark-background: #10091d;
-$highlight-text: #F8EFF4;
-$light-text: #a7baca;
-$lowlight-text: #535d65;
-$dark-text: #10091d;
+// Soft girl
+$soft-blush: #fff0f3;
+$soft-cream: #fff8f5;
+$soft-lavender: #e8d5f2;
+$soft-pink: #f4c2d7;
+$soft-rose: #e899ad;
+
+// Strong girl
+$strong-coral: #e85d75;
+$strong-plum: #2d1b33;
+$strong-wine: #9b4d6a;
+
+// Nerd: split-light tones from your IG portrait
+$nerd-mint: #7ec8b8;
+$nerd-lilac: #b8a9e8;
+$nerd-sage: #6b8f71;
+$glow-teal: #2dd4a8;
+$glow-coral: #ff6b4a;
+
+// Semantic
+$dark-background: #1a1220;
+$nerd-background: #0c1218;
+$movement-background: $soft-blush;
+$movement-background-deep: #fce4ec;
+$light-background: $soft-blush;
+$accent-teal: $nerd-mint;
+$accent-orange: $strong-coral;
+$light-text: #faf5f7;
+$muted-text: #a89ba8;
+$lowlight-text: #6b5f68;
+$dark-text: $strong-plum;
+$card-border: rgba(244, 194, 215, 0.18);
+$card-border-light: rgba(232, 213, 242, 0.55);
+
+@mixin gradient-text {
+  background: linear-gradient(135deg, #ffd6e3 0%, #e85d75 45%, #c98bb8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin gradient-text-strong {
+  background: linear-gradient(135deg, #ff8a9b 0%, #e85d75 50%, #f0a0b5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin name-readable {
+  -webkit-text-stroke: 1px rgba(45, 27, 51, 0.35);
+  paint-order: stroke fill;
+  filter:
+    drop-shadow(0 2px 6px rgba(26, 18, 32, 0.85))
+    drop-shadow(0 12px 28px rgba(26, 18, 32, 0.45));
+}
+
+@mixin split-glow {
+  background:
+    radial-gradient(ellipse 80% 60% at 8% 35%, rgba(45, 212, 168, 0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 55% at 92% 45%, rgba(255, 107, 53, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 90%, rgba(184, 169, 232, 0.1) 0%, transparent 50%),
+    $dark-background;
+}
+
+@mixin nerd-world-bg {
+  background-color: $nerd-background;
+}
+
+@mixin movement-world-bg {
+  background-color: $movement-background;
+}
+
+@mixin nerd-glass-panel {
+  background: rgba(126, 200, 184, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(126, 200, 184, 0.22);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(126, 200, 184, 0.08);
+}
+
+@mixin movement-glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(232, 153, 173, 0.35);
+  box-shadow:
+    0 16px 40px rgba(232, 153, 173, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+@mixin glass-panel {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(244, 194, 215, 0.18);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+@mixin soft-card-shadow {
+  box-shadow:
+    0 8px 32px rgba(232, 153, 173, 0.14),
+    0 2px 8px rgba(45, 27, 51, 0.05);
+}
+
+@mixin strong-card-shadow {
+  box-shadow:
+    0 12px 40px rgba(232, 93, 117, 0.18),
+    0 4px 12px rgba(45, 27, 51, 0.08);
+}
+
+@mixin split-bridge-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(126, 200, 184, 0.15) 0%,
+    rgba(126, 200, 184, 0.35) 18%,
+    rgba(244, 194, 215, 0.5) 50%,
+    rgba(255, 107, 74, 0.35) 82%,
+    rgba(232, 93, 117, 0.2) 100%
+  );
+}
+
+@mixin split-accent-gradient {
+  background: linear-gradient(90deg, $glow-teal, $soft-pink, $glow-coral);
+}
+
+@mixin gradient-border {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(45, 212, 168, 0.4), rgba(244, 194, 215, 0.5), rgba(255, 107, 53, 0.35));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: xor;
+    pointer-events: none;
+  }
+}

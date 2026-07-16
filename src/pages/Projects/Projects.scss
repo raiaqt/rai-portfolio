@@ -1,12 +1,7 @@
-.projects {
-    display: flex;
-    flex-direction: column;
-}
+@import "custom/theme";
 
 .projects-cards {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem 1rem;
-  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
 }
