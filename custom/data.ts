@@ -30,8 +30,8 @@ const introduction = {
   movementSide: {
     label: "the movement side",
     badge: "mover",
-    tagline: "I work out from feminine intuition.",
-    hint: "I focus on strength, stability, calm, and hormone balance, not the muscle-first playbook.",
+    tagline: "Feminine intuition guides how I train.",
+    hint: "I train for strength, stability, calm, and hormone balance, not bulk.",
   },
 };
 
@@ -54,68 +54,56 @@ const movementStory = {
 const sidequests = [
   {
     title: "Pilates",
-    symbol: "◐",
     text: "Pilates is the foundation everything else in my movement rests on. I come for core alignment and control, and it gives the rest a strong place to start.",
     gradient: "pilates",
     image: "feed-pilates.jpg",
     likes: 142,
     comments: 8,
-    progress: "",
     aspect: "portrait",
   },
   {
     title: "Bouldering",
-    symbol: "△",
-    text: "Bouldering builds my upper body strength and full-body stability in ways nothing else does. It is also the mind workout I need. Every problem on the wall asks me to think, breathe, and move at once.",
+    text: "Strength and stability on the wall, plus the mind workout I love.",
     gradient: "climbing",
     image: "feed-climbing.jpg",
     likes: 96,
     comments: 5,
-    progress: "black tags · still sending",
     aspect: "square",
   },
   {
     title: "Freediving",
-    symbol: "∿",
-    text: "Freediving is my practice of calm, relaxation, and connection with the ocean. Open water slows me down and gives me a stillness I carry back to land.",
+    text: "Calm, breath, and stillness in open water.",
     gradient: "freediving",
     image: "feed-freediving.jpg",
     likes: 218,
     comments: 14,
-    progress: "30m+ depth · breath hold training",
     aspect: "portrait",
   },
   {
     title: "Hiking",
-    symbol: "∧",
-    text: "Hiking keeps me connected to nature one step at a time. Trails give me fresh air, steady movement, and the kind of peace that only happens outdoors.",
+    text: "Fresh air, steady movement, and peace outdoors.",
     gradient: "hiking",
     image: "feed-hiking.jpg",
     likes: 173,
     comments: 11,
-    progress: "Weekend trails · chasing summits",
     aspect: "square",
   },
   {
     title: "Aerial",
-    symbol: "◆",
     text: "Aerial is the art that builds on that foundation. In the hammock I find inversions, flow, and expression, where strength becomes something beautiful.",
     gradient: "aerial",
     image: "feed-aerial.jpg",
     likes: 131,
     comments: 9,
-    progress: "still learning",
     aspect: "square",
   },
   {
     title: "Gym",
-    symbol: "▣",
-    text: "The gym is where I build bone density and lean muscle for the long term. I lift with intention, and the strength stays with me well beyond each session.",
+    text: "Intentional lifting for bone density and long-term strength.",
     gradient: "gym",
     image: "feed-gym.jpg",
     likes: 84,
     comments: 4,
-    progress: "3–4x/week",
     aspect: "square",
   },
 ];
@@ -139,7 +127,7 @@ const clientWork = [
   {
     title: "Clay Ventures Lab",
     from: "AI-powered SME incubator · Metro Manila, Philippines",
-    link: "https://clayventureslab.com",
+    link: "https://www.instagram.com/clayventureslab/",
     year: "2026",
     github: false,
     image: "clay-ventures-lab.png",
@@ -148,20 +136,20 @@ const clientWork = [
 
 const projects = [
   {
-    title: "Nightlearn",
-    text: "Nightlearn is a community for people learning to code on nights and weekends. I built it for career changers who need structure and encouragement without the pressure to keep up with a traditional bootcamp pace.",
-    link: "http://nightlearn.org",
-    year: "2025",
-    github: false,
-    image: "nightlearn.png",
-  },
-  {
     title: "Sortify",
     text: "Sortify uses AI to turn email into a focused to-do list. I built it after too many mornings lost to inbox triage, when I wanted to start the day knowing what actually matters.",
     link: "https://sortify.coderai.app/",
     year: "2025",
     github: false,
     image: "sortify.png",
+  },
+  {
+    title: "Nightlearn",
+    text: "Nightlearn is a community for people learning to code on nights and weekends. I built it for career changers who need structure and encouragement without the pressure to keep up with a traditional bootcamp pace.",
+    link: "http://nightlearn.org",
+    year: "2025",
+    github: false,
+    image: "nightlearn.png",
   },
 ];
 
@@ -190,7 +178,7 @@ const instagram = {
   profileLabel: "Raia Quitoriano",
   profilePhoto: "raia-instagram-profile.jpg",
   tagline: "Pilates · Aerial · Bouldering · Freediving · Hiking · Gym",
-  seeMoreLabel: "See more on Instagram",
+  seeMoreLabel: "Connect on Instagram",
 };
 
 const linkedinFeed = {
@@ -205,7 +193,12 @@ const linkedinFeed = {
     parent: "Aboitiz Power",
   },
   tagline: "Tech nerd by day · shipping code & leading teams",
-  seeMoreLabel: "See more on LinkedIn",
+  seeMoreLabel: "Connect on LinkedIn",
+  buildLabel: "Build your app",
+};
+
+const buildContact = {
+  inquiryMailto: "mailto:rsquitoriano@gmail.com?subject=Project%20inquiry",
 };
 
 export default {
@@ -223,4 +216,5 @@ export default {
   links,
   instagram,
   linkedinFeed,
+  buildContact,
 };

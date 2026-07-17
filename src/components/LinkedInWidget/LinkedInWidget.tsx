@@ -48,9 +48,6 @@ const LinkedInWidget: React.FC<LinkedInWidgetProps> = ({ embedded = false }) => 
         rel="noopener noreferrer"
       >
         {linkedinFeed.seeMoreLabel}
-        <span className="social-feed-see-more-arrow" aria-hidden="true">
-          →
-        </span>
       </a>
     </>
   );

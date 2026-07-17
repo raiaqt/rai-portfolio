@@ -88,53 +88,15 @@ $movement-accent-soft: rgba(232, 153, 173, 0.45);
     margin: 0;
 
     & + p {
-      margin-top: 4px;
+      margin-top: 6px;
       color: rgba(45, 27, 51, 0.62);
       font-size: 13px;
     }
   }
 }
 
-.movement-profile-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.movement-profile-follow,
-.movement-profile-message {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 34px;
-  border-radius: 10px;
-  font-family: "Montserrat", sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.movement-profile-follow {
-  color: $light-text;
-  background: linear-gradient(135deg, #0095f6 0%, #1877d2 100%);
-  box-shadow: 0 2px 10px rgba(0, 149, 246, 0.28);
-
-  &:hover {
-    filter: brightness(1.06);
-  }
-}
-
-.movement-profile-message {
-  color: rgba(45, 27, 51, 0.88);
-  border: 1px solid rgba(45, 27, 51, 0.14);
-  background: rgba(255, 255, 255, 0.72);
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.95);
-    border-color: rgba(45, 27, 51, 0.22);
-  }
+.movement-profile-activities {
+  letter-spacing: 0.01em;
 }
 
 .sidequest-link-grid {
@@ -177,12 +139,6 @@ $movement-accent-soft: rgba(232, 153, 173, 0.45);
 
     .sidequest-link-media img {
       transform: scale(1.04);
-    }
-
-    .sidequest-link-symbol {
-      border-color: rgba(255, 255, 255, 0.85);
-      background: rgba(232, 93, 117, 0.88);
-      color: $light-text;
     }
   }
 
@@ -349,31 +305,6 @@ $movement-accent-soft: rgba(232, 153, 173, 0.45);
   }
 }
 
-.sidequest-link-symbol {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: rgba(45, 27, 51, 0.52);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-  line-height: 1;
-  color: $light-text;
-  transition:
-    background 0.22s ease,
-    border-color 0.22s ease,
-    color 0.22s ease;
-}
-
 .sidequest-link-body {
   display: flex;
   flex-direction: column;
@@ -398,14 +329,6 @@ $movement-accent-soft: rgba(232, 153, 173, 0.45);
   margin: 0;
 }
 
-.sidequest-link-meta {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.02em;
-  color: rgba(155, 77, 106, 0.82);
-  margin: 2px 0 0;
-}
-
 .sidequest-link-outlink {
   display: inline-flex;
   align-items: center;
@@ -423,20 +346,34 @@ $movement-accent-soft: rgba(232, 153, 173, 0.45);
   }
 }
 
-.movement-side .social-feed--instagram {
-  max-height: none;
-  min-height: 380px;
-  border-radius: 16px;
-  overflow: hidden;
-  @include movement-glass-panel;
+.movement-side-connect-wrap {
+  margin-top: 8px;
+  padding: 0 2px 4px;
 }
 
-.movement-side .social-feed--embedded .social-feed-body {
-  padding: 0;
-  border: none;
-  background: transparent;
-  box-shadow: none;
-  min-height: 340px;
+.movement-side-connect {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 149, 246, 0.38);
+  background: rgba(0, 149, 246, 0.08);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0095f6;
+  text-decoration: none;
+  transition: all 0.22s ease;
+
+  &:hover {
+    color: $light-text;
+    border-color: #0095f6;
+    background: linear-gradient(135deg, #0095f6 0%, #1877d2 100%);
+    box-shadow: 0 4px 16px rgba(0, 149, 246, 0.28);
+  }
 }
 
 @media (max-width: 768px) {

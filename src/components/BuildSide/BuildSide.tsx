@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "../../../custom/data";
 import LinkCard from "../LinkCard/LinkCard";
 import LinkSvg from "../../assets/icons/LinkSvg";
@@ -10,8 +10,13 @@ import "../SideSectionHead/SideSectionHead.scss";
 import "./BuildSide.scss";
 
 const BuildSide: React.FC = () => {
-  const { linkedinFeed, links, clientWork, projects, experience } = data;
+  const { linkedinFeed, links, clientWork, projects, experience, buildContact } = data;
   const timelineRef = useTimelineSpine<HTMLOListElement>(experience.length);
+  const [showAllClientWork, setShowAllClientWork] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
+  const visibleClientWork = showAllClientWork ? clientWork : clientWork.slice(0, 1);
+  const visibleProjects = showAllProjects ? projects : projects.slice(0, 1);
 
   return (
     <section
@@ -62,14 +67,22 @@ const BuildSide: React.FC = () => {
                   .replace(/^www\./, "")}
               </a>
               <p className="linkedin-profile-tagline">{linkedinFeed.tagline}</p>
-              <a
-                className="linkedin-profile-connect"
-                href={links.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View profile
-              </a>
+              <div className="linkedin-profile-actions">
+                <a
+                  className="linkedin-profile-connect"
+                  href={links.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View profile
+                </a>
+                <a
+                  className="linkedin-profile-build"
+                  href={buildContact.inquiryMailto}
+                >
+                  {linkedinFeed.buildLabel}
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -78,19 +91,41 @@ const BuildSide: React.FC = () => {
       <section id="build-client-work" className="side-block side-block--build">
         <SideSectionHead side="build" label="client work" title="Client Work" />
         <div className="linkedin-featured-grid">
-          {clientWork.map((project, i) => (
-            <LinkCard key={i} card={project} variant="client" />
+          {visibleClientWork.map((project) => (
+            <LinkCard key={project.title} card={project} variant="client" />
           ))}
         </div>
+        {clientWork.length > 1 && (
+          <button
+            type="button"
+            className={`build-work-see-more${showAllClientWork ? " build-work-see-more--expanded" : ""}`}
+            onClick={() => setShowAllClientWork((open) => !open)}
+            aria-expanded={showAllClientWork}
+          >
+            <span>{showAllClientWork ? "Show less" : "See more"}</span>
+            <span className="build-work-see-more-icon" aria-hidden="true" />
+          </button>
+        )}
       </section>
 
       <section id="build-featured" className="side-block side-block--build">
         <SideSectionHead side="build" label="personal projects" title="Personal Projects" />
         <div id="projects" className="linkedin-featured-grid">
-          {projects.map((project, i) => (
-            <LinkCard key={i} card={project} variant="linkedin" />
+          {visibleProjects.map((project) => (
+            <LinkCard key={project.title} card={project} variant="linkedin" />
           ))}
         </div>
+        {projects.length > 1 && (
+          <button
+            type="button"
+            className={`build-work-see-more${showAllProjects ? " build-work-see-more--expanded" : ""}`}
+            onClick={() => setShowAllProjects((open) => !open)}
+            aria-expanded={showAllProjects}
+          >
+            <span>{showAllProjects ? "Show less" : "See more"}</span>
+            <span className="build-work-see-more-icon" aria-hidden="true" />
+          </button>
+        )}
       </section>
 
       <section id="build-experience" className="side-block side-block--build">

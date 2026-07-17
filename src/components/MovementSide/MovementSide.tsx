@@ -1,6 +1,5 @@
 import React from "react";
 import data from "../../../custom/data";
-import InstagramWidget from "../InstagramWidget/InstagramWidget";
 import SideColumnMasthead from "../SideColumnMasthead/SideColumnMasthead";
 import SideSectionHead from "../SideSectionHead/SideSectionHead";
 import "../SideSectionHead/SideSectionHead.scss";
@@ -13,12 +12,6 @@ type SidequestLinkProps = {
   href: string;
   publicUrl: string;
   variant?: "featured" | "editorial";
-};
-
-const SidequestMeta: React.FC<{ quest: Sidequest }> = ({ quest }) => {
-  if (!quest.progress) return null;
-
-  return <p className="sidequest-link-meta">{quest.progress}</p>;
 };
 
 const SidequestLink: React.FC<SidequestLinkProps> = ({
@@ -35,9 +28,6 @@ const SidequestLink: React.FC<SidequestLinkProps> = ({
     aria-label={`${quest.title}: ${quest.text}`}
   >
     <div className={`sidequest-link-media sidequest-link-media--${quest.gradient}`}>
-      <span className="sidequest-link-symbol" aria-hidden="true">
-        {quest.symbol}
-      </span>
       <img
         src={`${publicUrl}/images/${quest.image}`}
         alt=""
@@ -51,7 +41,6 @@ const SidequestLink: React.FC<SidequestLinkProps> = ({
     <div className="sidequest-link-body">
       <h3 className="sidequest-link-title">{quest.title}</h3>
       <p className="sidequest-link-text">{quest.text}</p>
-      <SidequestMeta quest={quest} />
     </div>
   </a>
 );
@@ -66,9 +55,6 @@ const SidequestCompactMobile: React.FC<SidequestCompactProps> = ({ quest, href, 
   <details className="sidequest-link sidequest-link--editorial sidequest-link--expandable">
     <summary className="sidequest-link-summary">
       <div className={`sidequest-link-media sidequest-link-media--${quest.gradient}`}>
-        <span className="sidequest-link-symbol" aria-hidden="true">
-          {quest.symbol}
-        </span>
         <img
           src={`${publicUrl}/images/${quest.image}`}
           alt=""
@@ -80,7 +66,6 @@ const SidequestCompactMobile: React.FC<SidequestCompactProps> = ({ quest, href, 
       </div>
       <div className="sidequest-link-body">
         <h3 className="sidequest-link-title">{quest.title}</h3>
-        <SidequestMeta quest={quest} />
       </div>
     </summary>
     <div className="sidequest-link-panel">
@@ -99,7 +84,7 @@ const SidequestCompactMobile: React.FC<SidequestCompactProps> = ({ quest, href, 
 );
 
 const MovementSide: React.FC = () => {
-  const { instagram, links, sidequests, movementStory, introduction } = data;
+  const { instagram, links, sidequests, movementStory, introduction, movementPillars } = data;
   const publicUrl = import.meta.env.VITE_PUBLIC_URL;
 
   const byTitle = (title: string) => sidequests.find((quest) => quest.title === title);
@@ -114,7 +99,7 @@ const MovementSide: React.FC = () => {
     <section
       id="movement-side"
       className="movement-side"
-      aria-label="Movement side: profile, hyperfixations, side quests, and activity"
+      aria-label="Movement side: profile, hyperfixations, and side quests"
     >
       <SideColumnMasthead side="move" />
 
@@ -147,26 +132,7 @@ const MovementSide: React.FC = () => {
 
           <div className="movement-profile-bio">
             <p>{introduction.movementSide.tagline}</p>
-            <p>{introduction.movementSide.hint}</p>
-          </div>
-
-          <div className="movement-profile-actions">
-            <a
-              className="movement-profile-follow"
-              href={links.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Follow
-            </a>
-            <a
-              className="movement-profile-message"
-              href={links.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Message
-            </a>
+            <p className="movement-profile-activities">{movementPillars.join(" · ")}</p>
           </div>
         </div>
       </article>
@@ -221,10 +187,16 @@ const MovementSide: React.FC = () => {
         </section>
       )}
 
-      <section id="movement-activity" className="side-block side-block--move">
-        <SideSectionHead side="move" label="activity" title="On the Feed" />
-        <InstagramWidget embedded />
-      </section>
+      <div className="movement-side-connect-wrap">
+        <a
+          className="movement-side-connect"
+          href={links.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {instagram.seeMoreLabel}
+        </a>
+      </div>
     </section>
   );
 };
