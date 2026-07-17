@@ -1,6 +1,7 @@
 import React from "react";
 import data from "../../../custom/data";
 import { useElfsightFeedReady, useElfsightPlatform } from "../../hooks/useElfsightFeed";
+import { useSlowAutoScroll } from "../../hooks/useSlowAutoScroll";
 import "./LinkedInWidget.scss";
 
 type LinkedInWidgetProps = {
@@ -11,11 +12,12 @@ const LinkedInWidget: React.FC<LinkedInWidgetProps> = ({ embedded = false }) => 
   const { linkedinFeed, links } = data;
   useElfsightPlatform();
   const { embedRef, isLoading } = useElfsightFeedReady();
+  const scrollRef = useSlowAutoScroll({ enabled: !isLoading });
 
   const feed = (
     <>
       <div className="social-feed-scroll-wrap">
-        <div className="social-feed-scroll">
+        <div className="social-feed-scroll" ref={scrollRef}>
           <div
             ref={embedRef}
             className={`social-feed-embed ${

@@ -27,13 +27,17 @@ a {
   }
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: $dark-background;
   color: $light-text;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1,

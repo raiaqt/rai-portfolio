@@ -46,17 +46,9 @@
 }
 
 .column-header-label {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
+  @include code-comment-label;
   display: block;
   margin-bottom: 12px;
-
-  &::before {
-    content: "// ";
-    opacity: 0.5;
-  }
 
   .column-header--nerd & {
     color: rgba(126, 200, 184, 0.7);

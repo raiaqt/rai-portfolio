@@ -6,17 +6,23 @@ import "./LinkCard.scss";
 interface LinkCardProps {
   card: {
     title: string;
-    text: string;
+    text?: string;
+    from?: string;
     link: string;
     year: string;
     github: boolean;
     image?: string;
   };
-  variant?: "default" | "linkedin";
+  variant?: "default" | "linkedin" | "client";
 }
 
 const LinkCard: React.FC<LinkCardProps> = ({ card, variant = "default" }) => {
-  const domain = card.link.replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+  const domain = card.link
+    .replace(/^https?:\/\//, "")
+    .replace(/\/.*$/, "")
+    .replace(/^www\./, "");
+
+  const isLinkedInStyle = variant === "linkedin" || variant === "client";
 
   return (
     <a
@@ -34,8 +40,9 @@ const LinkCard: React.FC<LinkCardProps> = ({ card, variant = "default" }) => {
       <div className="link-card-content">
         <div className="link-card-text">
           <span className="item-title">{card.title}</span>
-          <span className="item-text">{card.text}</span>
-          {variant === "linkedin" ? (
+          {card.from && <span className="item-from">{card.from}</span>}
+          {card.text && <span className="item-text">{card.text}</span>}
+          {isLinkedInStyle ? (
             <span className="item-text muted-text">{domain} · {card.year}</span>
           ) : (
             <span className="item-text muted-text">Created {card.year}</span>

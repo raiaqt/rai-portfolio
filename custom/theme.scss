@@ -23,6 +23,9 @@ $nerd-background: #0c1218;
 $movement-background: $soft-blush;
 $movement-background-deep: #fce4ec;
 $light-background: $soft-blush;
+$feed-caption-base: #26262a;
+$feed-caption-shell: rgba(38, 38, 42, 0.68);
+$feed-caption-surface: rgba(38, 38, 42, 0.92);
 $accent-teal: $nerd-mint;
 $accent-orange: $strong-coral;
 $light-text: #faf5f7;
@@ -62,12 +65,26 @@ $card-border-light: rgba(232, 213, 242, 0.55);
     $dark-background;
 }
 
-@mixin nerd-world-bg {
+@mixin split-surface-nerd {
   background-color: $nerd-background;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 35%, rgba(45, 212, 168, 0.14) 0%, transparent 58%),
+    radial-gradient(ellipse 50% 40% at 0% 80%, rgba(126, 200, 184, 0.08) 0%, transparent 50%);
+}
+
+@mixin split-surface-movement {
+  background-color: $movement-background;
+  background-image:
+    radial-gradient(ellipse 75% 55% at 85% 40%, rgba(255, 107, 74, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 100% 75%, rgba(244, 194, 215, 0.22) 0%, transparent 50%);
+}
+
+@mixin nerd-world-bg {
+  @include split-surface-nerd;
 }
 
 @mixin movement-world-bg {
-  background-color: $movement-background;
+  @include split-surface-movement;
 }
 
 @mixin nerd-glass-panel {
@@ -125,6 +142,32 @@ $card-border-light: rgba(232, 213, 242, 0.55);
 
 @mixin split-accent-gradient {
   background: linear-gradient(90deg, $glow-teal, $soft-pink, $glow-coral);
+}
+
+@mixin split-spine-vertical {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  @include split-bridge-gradient;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+@mixin code-comment-label {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+
+  &::before {
+    content: "// ";
+    opacity: 0.5;
+  }
 }
 
 @mixin gradient-border {

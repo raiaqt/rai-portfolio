@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
           Con<span className="gradient-text">tact</span>
         </h2>
         <p className="contact-intro">
-          Always down to talk about what I build, how I move, or the next sidequest.
+          I would love to hear from you, whether you want to talk about something you are building, how you like to move, or just say hello.
         </p>
         <div className="contact-icons">
           <a href={links.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">

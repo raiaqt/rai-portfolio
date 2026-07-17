@@ -20,17 +20,9 @@
 }
 
 .contact-label {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  @include code-comment-label;
   color: rgba(184, 169, 232, 0.65);
   margin-bottom: 12px;
-
-  &::before {
-    content: "// ";
-    opacity: 0.55;
-  }
 }
 
 .contact-title {

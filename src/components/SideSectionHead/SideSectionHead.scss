@@ -5,19 +5,11 @@
 }
 
 .side-section-label {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
+  @include code-comment-label;
   display: block;
   margin-bottom: 8px;
   position: relative;
   padding-bottom: 8px;
-
-  &::before {
-    content: "// ";
-    opacity: 0.5;
-  }
 
   &::after {
     content: "";

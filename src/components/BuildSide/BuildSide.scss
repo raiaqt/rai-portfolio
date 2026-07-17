@@ -5,7 +5,7 @@ $linkedin-accent-bright: #7ec8e8;
 $linkedin-feed-bg: #eef3f8;
 
 .build-side {
-  padding-top: 40px;
+  padding-top: 8px;
   padding-bottom: 64px;
   min-height: 100%;
 }
@@ -74,6 +74,39 @@ $linkedin-feed-bg: #eef3f8;
   margin: 6px 0 0;
 }
 
+.linkedin-profile-site-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: $linkedin-accent-bright;
+  text-decoration: underline;
+  text-decoration-color: rgba(126, 200, 232, 0.45);
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+
+  &:hover {
+    color: #a8dff5;
+    text-decoration-color: rgba(126, 200, 232, 0.85);
+  }
+}
+
+.linkedin-profile-site-link-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+}
+
 .linkedin-profile-tagline {
   font-family: "Ubuntu Mono", monospace;
   font-size: 11px;
@@ -110,70 +143,105 @@ $linkedin-feed-bg: #eef3f8;
 }
 
 .build-timeline {
+  --timeline-spine-top: 0px;
+  --timeline-spine-bottom: 0px;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 0 4px;
   position: relative;
-}
-
-.build-timeline-item {
-  display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
-  gap: 14px;
-  padding-bottom: 22px;
-  position: relative;
-
-  &:last-child {
-    padding-bottom: 0;
-  }
 
   &::before {
     content: "";
     position: absolute;
     left: 11px;
-    top: 14px;
-    bottom: -4px;
+    top: var(--timeline-spine-top);
+    bottom: var(--timeline-spine-bottom);
     width: 2px;
     background: linear-gradient(
       180deg,
-      rgba(126, 200, 184, 0.22) 0%,
-      rgba(126, 200, 184, 0.55) 100%
+      rgba(126, 200, 184, 0.28) 0%,
+      rgba(126, 200, 184, 0.48) 55%,
+      rgba(126, 200, 184, 0.78) 100%
     );
     border-radius: 2px;
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.build-timeline-item {
+  position: relative;
+  z-index: 1;
+
+  &:not(:last-child) {
+    margin-bottom: 18px;
   }
 
-  &:last-child::before {
-    display: none;
+  &:nth-last-child(2) {
+    margin-bottom: 24px;
   }
 
   &--now {
     .build-timeline-node {
       width: 14px;
       height: 14px;
-      margin-left: -1px;
       background: $nerd-mint;
-      border-color: rgba(126, 200, 184, 0.55);
-      box-shadow: 0 0 14px rgba(126, 200, 184, 0.45);
+      border-color: rgba(126, 200, 184, 0.65);
+      box-shadow:
+        0 0 0 3px rgba(126, 200, 184, 0.12),
+        0 0 16px rgba(126, 200, 184, 0.42);
     }
 
     .build-timeline-role {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
       color: $light-text;
     }
+
+    .build-timeline-company {
+      font-size: 13px;
+      font-weight: 600;
+      color: $nerd-mint;
+      margin-top: 2px;
+    }
+
+    .build-timeline-company-parent {
+      font-weight: 500;
+      color: rgba(126, 200, 184, 0.38);
+    }
   }
+}
+
+.build-timeline-tag-row {
+  --timeline-tag-row-height: 26px;
+  padding-left: 38px;
+  min-height: var(--timeline-tag-row-height);
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 2px;
+}
+
+.build-timeline-row {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: stretch;
 }
 
 .build-timeline-track {
   display: flex;
   justify-content: center;
-  padding-top: 4px;
+  padding-top: 5px;
 }
 
 .build-timeline-node {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(12, 18, 24, 0.95);
-  border: 2px solid rgba(126, 200, 184, 0.45);
+  background: rgba(12, 18, 24, 0.98);
+  border: 2px solid rgba(126, 200, 184, 0.5);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
@@ -184,17 +252,14 @@ $linkedin-feed-bg: #eef3f8;
 }
 
 .build-timeline-tag {
-  display: inline-block;
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(126, 200, 184, 0.62);
-  margin-bottom: 4px;
+  @include code-comment-label;
+  display: block;
+  color: rgba(126, 200, 184, 0.58);
+  margin: 0;
 }
 
 .build-timeline-item--now .build-timeline-tag {
-  color: $nerd-mint;
+  color: rgba(126, 200, 184, 0.88);
 }
 
 .build-timeline-role {
@@ -211,17 +276,22 @@ $linkedin-feed-bg: #eef3f8;
   font-size: 13px;
   line-height: 1.45;
   color: rgba(126, 200, 184, 0.72);
-  margin: 3px 0 0;
+  margin: 2px 0 0;
+}
 
-  &--link {
-    display: inline-block;
-    text-decoration: none;
-    transition: color 0.2s ease;
+.build-timeline-company-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
 
-    &:hover {
-      color: $nerd-mint;
-    }
+  &:hover {
+    color: $nerd-mint;
   }
+}
+
+.build-timeline-company-parent {
+  font-weight: 400;
+  color: rgba(126, 200, 184, 0.34);
 }
 
 .build-side .social-feed--linkedin {

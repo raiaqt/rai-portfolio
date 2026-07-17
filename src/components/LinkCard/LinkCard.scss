@@ -67,6 +67,7 @@
 
 .link-card-image {
   width: 100%;
+  height: 200px;
   position: relative;
   overflow: hidden;
   background: rgba(20, 14, 26, 0.5);
@@ -85,9 +86,10 @@
 
   > img {
     width: 100%;
-    max-height: 140px;
-    object-fit: cover;
-    object-position: top;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+    object-position: center center;
     display: block;
     transition: transform 0.5s ease;
     opacity: 0.88;
@@ -124,7 +126,8 @@
   transform: translate(2px, -2px);
 }
 
-.link-card--linkedin {
+.link-card--linkedin,
+.link-card--client {
   border-radius: 12px;
   border: 1px solid rgba(126, 200, 184, 0.2);
   background: rgba(12, 18, 24, 0.92);
@@ -163,6 +166,8 @@
   }
 
   .link-card-image {
+    height: 200px;
+    flex-shrink: 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
     border-bottom: 1px solid rgba(126, 200, 184, 0.14);
 
@@ -172,14 +177,14 @@
 
     > img {
       width: 100%;
-      height: auto;
-      min-height: 160px;
-      max-height: 320px;
+      height: 100%;
+      min-height: 0;
+      max-height: none;
       object-fit: contain;
-      object-position: center top;
+      object-position: center center;
       opacity: 1;
       filter: none;
-      padding: 8px 8px 0;
+      padding: 0;
     }
   }
 
@@ -201,5 +206,20 @@
 
   &:hover .link-card-icon > svg {
     fill: $nerd-mint;
+  }
+}
+
+.link-card--client {
+  .item-from {
+    display: block;
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+    color: rgba(250, 245, 247, 0.58);
+    margin: 0 0 8px;
+  }
+
+  .muted-text {
+    margin-top: 6px;
   }
 }

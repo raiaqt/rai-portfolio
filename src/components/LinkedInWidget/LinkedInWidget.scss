@@ -25,16 +25,8 @@ $linkedin-accent-bright: #7ec8e8;
 }
 
 .social-feed--linkedin .social-feed-label {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: lowercase;
+  @include code-comment-label;
   color: $nerd-mint;
-
-  &::before {
-    content: "// ";
-    opacity: 0.5;
-  }
 }
 
 .social-feed--linkedin .social-feed-handle {
@@ -213,16 +205,8 @@ $linkedin-accent-bright: #7ec8e8;
 }
 
 .social-feed--linkedin .social-feed-loader-text {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+  @include code-comment-label;
   color: rgba(10, 80, 120, 0.65);
-
-  &::before {
-    content: "// ";
-    opacity: 0.5;
-  }
 }
 
 .social-feed--linkedin .social-feed-see-more {

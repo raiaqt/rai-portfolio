@@ -49,25 +49,26 @@ span {
 
 .site-split {
   position: relative;
-  z-index: 100;
-  overflow: hidden;
+  z-index: 10;
+  overflow: visible;
+  margin-top: 0;
 }
 
 .site-split-surface {
   position: absolute;
-  top: 0;
+  top: -100vh;
   bottom: 0;
-  width: calc(50% - 1px);
+  width: 50%;
   pointer-events: none;
 
   &--nerd {
     left: 0;
-    @include nerd-world-bg;
+    @include split-surface-nerd;
   }
 
   &--movement {
     right: 0;
-    @include movement-world-bg;
+    @include split-surface-movement;
   }
 }
 
@@ -75,6 +76,8 @@ span {
   position: absolute;
   inset: 0;
   opacity: 0.4;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.35) 120px, black 240px);
+  mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.35) 120px, black 240px);
 
   #tsparticles,
   #tsparticles canvas {
@@ -87,9 +90,10 @@ span {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 40px minmax(0, 1fr);
-  grid-template-rows: auto auto auto;
+  grid-template-columns: minmax(0, 1fr) clamp(80px, 9vw, 128px) minmax(0, 1fr);
+  grid-template-rows: auto auto auto auto;
   grid-template-areas:
+    "lead lead lead"
     "build rail-1 move"
     "build rail-2 move"
     "build rail-3 move";
@@ -99,12 +103,12 @@ span {
     content: "";
     position: absolute;
     left: calc(50% - 1px);
-    top: 0;
+    top: -100vh;
     bottom: 0;
     width: 2px;
     @include split-bridge-gradient;
     opacity: 0.85;
-    z-index: 2;
+    z-index: 0;
     pointer-events: none;
   }
 
@@ -112,7 +116,7 @@ span {
     content: "";
     position: absolute;
     left: calc(50% - 5px);
-    top: 0;
+    top: -100vh;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -121,7 +125,7 @@ span {
       0 0 10px rgba(244, 194, 215, 0.75),
       0 0 22px rgba(126, 200, 184, 0.45);
     animation: split-spine-travel 10s ease-in-out infinite;
-    z-index: 3;
+    z-index: 0;
     pointer-events: none;
   }
 }
@@ -183,6 +187,7 @@ span {
   padding: 0 clamp(20px, 4vw, 40px);
   min-width: 0;
   position: relative;
+  z-index: 1;
 
   &--nerd:not(.site-split-cell--header):not(.site-split-cell--build)::before {
     content: "";
@@ -216,10 +221,11 @@ span {
 
     &.site-split-cell--build {
       grid-area: build;
-      grid-row: 1 / -1;
+      grid-row: 2 / -1;
       align-self: stretch;
       padding-top: 0;
       padding-bottom: 0;
+      padding-right: clamp(28px, 3.5vw, 52px);
     }
 
     &.site-split-cell--header {
@@ -247,10 +253,11 @@ span {
 
     &.site-split-cell--move {
       grid-area: move;
-      grid-row: 1 / -1;
+      grid-row: 2 / -1;
       align-self: stretch;
       padding-top: 0;
       padding-bottom: 0;
+      padding-left: clamp(28px, 3.5vw, 52px);
     }
 
     &.site-split-cell--header {
@@ -292,19 +299,11 @@ span {
 }
 
 .column-section-label {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: lowercase;
+  @include code-comment-label;
   display: block;
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
-
-  &::before {
-    content: "// ";
-    opacity: 0.5;
-  }
 
   &::after {
     content: "";
@@ -388,19 +387,10 @@ span {
 }
 
 .section-label {
-  font-family: "Ubuntu Mono", monospace;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: lowercase;
+  @include code-comment-label;
   color: $nerd-lilac;
   display: block;
   margin-bottom: 8px;
-
-  &::before {
-    content: "// ";
-    opacity: 0.55;
-  }
 }
 
 .light-background .section-label {
@@ -473,10 +463,16 @@ span {
     display: none;
   }
 
+  .site-split {
+    overflow-x: clip;
+    max-width: 100%;
+  }
+
   .site-split-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
+      "lead"
       "build"
       "move";
   }
@@ -514,12 +510,14 @@ span {
     &.site-split-cell--build {
       grid-row: auto;
       padding-bottom: 0;
+      padding-right: clamp(20px, 5vw, 32px);
     }
 
     &.site-split-cell--move {
       grid-row: auto;
       padding-top: 0;
       padding-bottom: 48px;
+      padding-left: clamp(20px, 5vw, 32px);
       border-top: 1px solid rgba(232, 153, 173, 0.22);
     }
   }

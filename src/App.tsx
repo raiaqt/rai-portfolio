@@ -1,6 +1,7 @@
 import Introduction from "./pages/Introduction/Introduction";
 import BuildSide from "./components/BuildSide/BuildSide";
 import MovementSide from "./components/MovementSide/MovementSide";
+import SiteSplitLead from "./components/SiteSplitLead/SiteSplitLead";
 import Contact from "./pages/Contact/Contact";
 import ParticleBackground from "./components/ParticleBackground/ParticleBackground";
 
@@ -19,6 +20,7 @@ function App() {
         <div className="site-split-surface site-split-surface--movement" aria-hidden="true" />
 
         <div className="site-split-grid">
+          <SiteSplitLead />
           <div className="site-split-cell site-split-cell--nerd site-split-cell--build">
             <BuildSide />
           </div>

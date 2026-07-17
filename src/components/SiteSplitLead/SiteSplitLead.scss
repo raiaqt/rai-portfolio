@@ -1,0 +1,51 @@
+@import "custom/theme";
+
+.site-split-lead {
+  grid-area: lead;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: clamp(56px, 8vh, 88px) clamp(24px, 5vw, 48px) clamp(28px, 4vh, 40px);
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.site-split-lead-title {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 10px clamp(20px, 3.5vw, 30px);
+  border-radius: 999px;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: $feed-caption-shell;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.site-split-lead-label {
+  @include code-comment-label;
+  color: $nerd-mint;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .site-split-lead {
+    padding-top: clamp(48px, 7vh, 72px);
+    padding-bottom: 32px;
+  }
+
+  .site-split-lead-title::after {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import data from "../../../custom/data";
 import { useElfsightFeedReady, useElfsightPlatform } from "../../hooks/useElfsightFeed";
+import { useSlowAutoScroll } from "../../hooks/useSlowAutoScroll";
+import FeedLoadingPlaceholder from "./FeedLoadingPlaceholder";
 import "./InstagramWidget.scss";
 
 type InstagramWidgetProps = {
@@ -11,11 +13,12 @@ const InstagramWidget: React.FC<InstagramWidgetProps> = ({ embedded = false }) =
   const { instagram, links } = data;
   useElfsightPlatform();
   const { embedRef, isLoading } = useElfsightFeedReady();
+  const scrollRef = useSlowAutoScroll({ enabled: !isLoading });
 
   const feed = (
     <>
       <div className="social-feed-scroll-wrap">
-        <div className="social-feed-scroll">
+        <div className="social-feed-scroll" ref={scrollRef}>
           <div
             ref={embedRef}
             className={`social-feed-embed ${
@@ -23,15 +26,7 @@ const InstagramWidget: React.FC<InstagramWidgetProps> = ({ embedded = false }) =
             }`}
           >
             {isLoading && (
-              <div
-                className="social-feed-loader"
-                role="status"
-                aria-live="polite"
-                aria-label="Loading Instagram feed"
-              >
-                <div className="social-feed-loader-ring" aria-hidden="true" />
-                <span className="social-feed-loader-text">loading feed</span>
-              </div>
+              <FeedLoadingPlaceholder variant={embedded ? "embedded" : "hero"} />
             )}
             <div className={`elfsight-app-${instagram.elfsightAppId}`} />
           </div>

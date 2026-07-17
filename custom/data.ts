@@ -1,3 +1,7 @@
+const siteSplit = {
+  label: "the two sides",
+};
+
 const columnSides = {
   build: {
     sideLabel: "the nerd side",
@@ -10,7 +14,7 @@ const columnSides = {
     sideLabel: "the movement side",
     title: "Move",
     titleAccent: "ve",
-    badge: "sidequester",
+    badge: "mover",
     platform: "Instagram",
   },
 };
@@ -25,100 +29,127 @@ const introduction = {
   },
   movementSide: {
     label: "the movement side",
-    badge: "sidequester",
-    tagline: "chronic sidequester · @raiaqt",
-    hint: "Instagram-style profile, sidequest highlights, and post feed.",
+    badge: "mover",
+    tagline: "I work out from feminine intuition.",
+    hint: "I focus on strength, stability, calm, and hormone balance, not the muscle-first playbook.",
   },
 };
 
 const description = {
   developer: "I ship code, personal projects, tools, and experiments.",
   movement:
-    "Off the clock sidequests and the stories that come with them.",
+    "Most fitness guides focus on building muscle for men. I train for hormone balance through strength, stability, calm, and intuition.",
   aside: "CTO at My Powerhouse · coderai.app",
 };
 
-const movementPillars = ["Pilates", "Bouldering", "Freediving", "Hiking", "Aerial"];
+const movementPillars = ["Pilates", "Aerial", "Bouldering", "Freediving", "Hiking", "Gym"];
 
 const movementStory = {
   feed: ["Pilates", "Aerial"],
-  highlights: ["Bouldering", "Freediving", "Hiking"],
+  feedLabel: "hyperfixations",
+  highlights: ["Bouldering", "Freediving", "Hiking", "Gym"],
+  highlightsLabel: "other side quests",
 };
 
 const sidequests = [
   {
     title: "Pilates",
     symbol: "◐",
-    text: "Strength, alignment, and control. Building a body that moves with intention.",
+    text: "Pilates is the foundation everything else in my movement rests on. I come for core alignment and control, and it gives the rest a strong place to start.",
     gradient: "pilates",
     image: "feed-pilates.jpg",
     likes: 142,
     comments: 8,
-    started: "2025",
-    progress: "2–3x/week",
+    progress: "",
     aspect: "portrait",
   },
   {
     title: "Bouldering",
     symbol: "△",
-    text: "Boulder problems and chalky hands. Problem-solving, different medium.",
+    text: "Bouldering builds my upper body strength and full-body stability in ways nothing else does. It is also the mind workout I need. Every problem on the wall asks me to think, breathe, and move at once.",
     gradient: "climbing",
     image: "feed-climbing.jpg",
     likes: 96,
     comments: 5,
-    started: "2023",
-    progress: "V4–V5 bouldering · still sending",
+    progress: "black tags · still sending",
     aspect: "square",
   },
   {
     title: "Freediving",
     symbol: "∿",
-    text: "Open water, breath holds, and falling in love with the ocean.",
+    text: "Freediving is my practice of calm, relaxation, and connection with the ocean. Open water slows me down and gives me a stillness I carry back to land.",
     gradient: "freediving",
     image: "feed-freediving.jpg",
     likes: 218,
     comments: 14,
-    started: "2024",
     progress: "30m+ depth · breath hold training",
     aspect: "portrait",
   },
   {
     title: "Hiking",
     symbol: "∧",
-    text: "Trails, summits, and the quiet between steps.",
+    text: "Hiking keeps me connected to nature one step at a time. Trails give me fresh air, steady movement, and the kind of peace that only happens outdoors.",
     gradient: "hiking",
     image: "feed-hiking.jpg",
     likes: 173,
     comments: 11,
-    started: "2018",
     progress: "Weekend trails · chasing summits",
     aspect: "square",
   },
   {
     title: "Aerial",
     symbol: "◆",
-    text: "Inversions, dance, and art. Moving in the aerial hammock.",
+    text: "Aerial is the art that builds on that foundation. In the hammock I find inversions, flow, and expression, where strength becomes something beautiful.",
     gradient: "aerial",
     image: "feed-aerial.jpg",
     likes: 131,
     comments: 9,
-    started: "2026",
     progress: "still learning",
+    aspect: "square",
+  },
+  {
+    title: "Gym",
+    symbol: "▣",
+    text: "The gym is where I build bone density and lean muscle for the long term. I lift with intention, and the strength stays with me well beyond each session.",
+    gradient: "gym",
+    image: "feed-gym.jpg",
+    likes: 84,
+    comments: 4,
+    progress: "3–4x/week",
     aspect: "square",
   },
 ];
 
 const experience = [
-  { role: "Software Engineer", company: "Samsung Electronics" },
-  { role: "Lead Engineer", company: "Samsung Electronics" },
-  { role: "Technical Lead", company: "UBX" },
-  { role: "Chief Technology Officer", company: "Powerhouse", link: "https://mypowerhouse.ph" },
+  { role: "Software Engineer", company: "Samsung" },
+  { role: "Lead Engineer", company: "Samsung" },
+  { role: "Technical Lead", company: "UBx", parent: "Unionbank" },
+  { role: "Chief Technology Officer", company: "Powerhouse", parent: "Aboitiz Power", link: "https://mypowerhouse.ph" },
+];
+
+const clientWork = [
+  {
+    title: "The Creekside School",
+    from: "Nonpublic school · San Jose, CA",
+    link: "https://www.creeksideschool.org/",
+    year: "2026",
+    github: false,
+    image: "creekside.png",
+  },
+  {
+    title: "Clay Ventures Lab",
+    from: "AI-powered SME incubator · Metro Manila, Philippines",
+    link: "https://clayventureslab.com",
+    year: "2026",
+    github: false,
+    image: "clay-ventures-lab.png",
+  },
 ];
 
 const projects = [
   {
     title: "Nightlearn",
-    text: "Learn to Code at Night. Change Your Future by Morning.",
+    text: "Nightlearn is a community for people learning to code on nights and weekends. I built it for career changers who need structure and encouragement without the pressure to keep up with a traditional bootcamp pace.",
     link: "http://nightlearn.org",
     year: "2025",
     github: false,
@@ -126,7 +157,7 @@ const projects = [
   },
   {
     title: "Sortify",
-    text: "Turn your inbox into a smart, focused to-do list.",
+    text: "Sortify uses AI to turn email into a focused to-do list. I built it after too many mornings lost to inbox triage, when I wanted to start the day knowing what actually matters.",
     link: "https://sortify.coderai.app/",
     year: "2025",
     github: false,
@@ -158,7 +189,7 @@ const instagram = {
   username: "raiaqt",
   profileLabel: "Raia Quitoriano",
   profilePhoto: "raia-instagram-profile.jpg",
-  tagline: "Pilates · Bouldering · Freediving · Hiking · Aerial",
+  tagline: "Pilates · Aerial · Bouldering · Freediving · Hiking · Gym",
   seeMoreLabel: "See more on Instagram",
 };
 
@@ -167,19 +198,26 @@ const linkedinFeed = {
   profileLabel: "Raia Quitoriano",
   profilePhoto:
     "https://media.licdn.com/dms/image/v2/D5603AQEPxM8HehUShg/profile-displayphoto-shrink_800_800/B56ZZXgdxCGQAc-/0/1745224852722?e=1785974400&v=beta&t=V8I0qgTrYqDtC6IlkyRduxrFvZ_6YQE6g-XcCje_UtE",
-  headline: "Chief Technology Officer at My Powerhouse · Aboitiz Power",
+  headline: {
+    role: "Chief Technology Officer at",
+    company: "Powerhouse",
+    companyLink: "https://mypowerhouse.ph",
+    parent: "Aboitiz Power",
+  },
   tagline: "Tech nerd by day · shipping code & leading teams",
   seeMoreLabel: "See more on LinkedIn",
 };
 
 export default {
   introduction,
+  siteSplit,
   columnSides,
   description,
   movementPillars,
   movementStory,
   sidequests,
   experience,
+  clientWork,
   projects,
   background,
   links,
