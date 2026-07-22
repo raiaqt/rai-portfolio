@@ -469,6 +469,7 @@ span {
   }
 
   .site-split-grid {
+    @include nerd-world-bg;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-template-areas:
@@ -496,7 +497,7 @@ span {
     padding-inline: clamp(20px, 5vw, 32px);
 
     &--nerd {
-      @include nerd-world-bg;
+      background: transparent;
     }
 
     &--movement {

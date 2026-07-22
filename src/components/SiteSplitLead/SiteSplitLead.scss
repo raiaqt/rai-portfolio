@@ -13,9 +13,11 @@
 
 .site-split-lead-title {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  padding: 10px clamp(20px, 3.5vw, 30px);
+  padding: 12px clamp(20px, 3.5vw, 30px);
   border-radius: 999px;
   isolation: isolate;
 
@@ -41,8 +43,8 @@
 
 @media (max-width: 1024px) {
   .site-split-lead {
-    padding-top: clamp(48px, 7vh, 72px);
-    padding-bottom: 32px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
   .site-split-lead-title::after {

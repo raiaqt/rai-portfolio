@@ -8,6 +8,7 @@ interface LinkCardProps {
     title: string;
     text?: string;
     from?: string;
+    category?: string;
     link: string;
     year: string;
     github: boolean;
@@ -23,6 +24,8 @@ const LinkCard: React.FC<LinkCardProps> = ({ card, variant = "default" }) => {
     .replace(/^www\./, "");
 
   const isLinkedInStyle = variant === "linkedin" || variant === "client";
+  const isClient = variant === "client";
+  const isPersonalProject = variant === "linkedin";
 
   return (
     <a
@@ -38,19 +41,35 @@ const LinkCard: React.FC<LinkCardProps> = ({ card, variant = "default" }) => {
         />
       </div>
       <div className="link-card-content">
-        <div className="link-card-text">
-          <span className="item-title">{card.title}</span>
-          {card.from && <span className="item-from">{card.from}</span>}
-          {card.text && <span className="item-text">{card.text}</span>}
-          {isLinkedInStyle ? (
-            <span className="item-text muted-text">{domain} · {card.year}</span>
-          ) : (
-            <span className="item-text muted-text">Created {card.year}</span>
-          )}
-        </div>
-        <div className="link-card-icon">
-          {card.github ? <GithubSvg /> : <LinkSvg />}
-        </div>
+        {isClient || isPersonalProject ? (
+          <div className="link-card-text">
+            <span className="item-title">{card.title}</span>
+            {card.from && <span className="item-from">{card.from}</span>}
+            {card.text && <span className="item-text">{card.text}</span>}
+            {isClient && (
+              <span className="client-project-action">
+                View live project
+                <span aria-hidden="true">↗</span>
+              </span>
+            )}
+          </div>
+        ) : (
+          <>
+            <div className="link-card-text">
+              <span className="item-title">{card.title}</span>
+              {card.from && <span className="item-from">{card.from}</span>}
+              {card.text && <span className="item-text">{card.text}</span>}
+              {isLinkedInStyle ? (
+                <span className="item-text muted-text">{domain} · {card.year}</span>
+              ) : (
+                <span className="item-text muted-text">Created {card.year}</span>
+              )}
+            </div>
+            <div className="link-card-icon">
+              {card.github ? <GithubSvg /> : <LinkSvg />}
+            </div>
+          </>
+        )}
       </div>
     </a>
   );

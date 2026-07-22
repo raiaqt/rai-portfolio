@@ -143,7 +143,6 @@ const MovementSide: React.FC = () => {
             side="move"
             label={movementStory.feedLabel}
             title="Hyperfixations"
-            lede="The practices I keep coming back to."
           />
           <div className="sidequest-link-grid sidequest-link-grid--featured" role="list">
             {feedQuests.map((quest) => (
@@ -165,7 +164,6 @@ const MovementSide: React.FC = () => {
             side="move"
             label={movementStory.highlightsLabel}
             title="Other Side Quests"
-            lede="Everything else in rotation."
           />
           <div className="sidequest-link-grid sidequest-link-grid--editorial" role="list">
             {highlightQuests.map((quest) => (

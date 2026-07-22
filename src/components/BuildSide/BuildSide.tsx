@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "../../../custom/data";
 import LinkCard from "../LinkCard/LinkCard";
 import LinkSvg from "../../assets/icons/LinkSvg";
-import LinkedInWidget from "../LinkedInWidget/LinkedInWidget";
+import InquiryModal from "../InquiryModal/InquiryModal";
 import { useTimelineSpine } from "../../hooks/useTimelineSpine";
 import SideColumnMasthead from "../SideColumnMasthead/SideColumnMasthead";
 import SideSectionHead from "../SideSectionHead/SideSectionHead";
@@ -10,12 +10,13 @@ import "../SideSectionHead/SideSectionHead.scss";
 import "./BuildSide.scss";
 
 const BuildSide: React.FC = () => {
-  const { linkedinFeed, links, clientWork, projects, experience, buildContact } = data;
+  const { linkedinFeed, links, clientWork, projects, experience } = data;
   const timelineRef = useTimelineSpine<HTMLOListElement>(experience.length);
   const [showAllClientWork, setShowAllClientWork] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  const [showInquiryModal, setShowInquiryModal] = useState(false);
 
-  const visibleClientWork = showAllClientWork ? clientWork : clientWork.slice(0, 1);
+  const visibleClientWork = showAllClientWork ? clientWork : clientWork.slice(0, 2);
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 1);
 
   return (
@@ -67,6 +68,7 @@ const BuildSide: React.FC = () => {
                   .replace(/^www\./, "")}
               </a>
               <p className="linkedin-profile-tagline">{linkedinFeed.tagline}</p>
+              <p className="linkedin-profile-partnership">{linkedinFeed.partnershipPitch}</p>
               <div className="linkedin-profile-actions">
                 <a
                   className="linkedin-profile-connect"
@@ -76,12 +78,13 @@ const BuildSide: React.FC = () => {
                 >
                   View profile
                 </a>
-                <a
+                <button
+                  type="button"
                   className="linkedin-profile-build"
-                  href={buildContact.inquiryMailto}
+                  onClick={() => setShowInquiryModal(true)}
                 >
                   {linkedinFeed.buildLabel}
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -92,7 +95,10 @@ const BuildSide: React.FC = () => {
         <SideSectionHead side="build" label="client work" title="Client Work" />
         <div className="linkedin-featured-grid">
           {visibleClientWork.map((project) => (
-            <LinkCard key={project.title} card={project} variant="client" />
+            <div className="client-work-item" key={project.title}>
+              <span className="client-work-category">{project.category}</span>
+              <LinkCard card={project} variant="client" />
+            </div>
           ))}
         </div>
         {clientWork.length > 1 && (
@@ -176,10 +182,7 @@ const BuildSide: React.FC = () => {
         </ol>
       </section>
 
-      <section id="build-activity" className="side-block side-block--build">
-        <SideSectionHead side="build" label="activity" title="Activity" />
-        <LinkedInWidget embedded />
-      </section>
+      <InquiryModal open={showInquiryModal} onClose={() => setShowInquiryModal(false)} />
     </section>
   );
 };

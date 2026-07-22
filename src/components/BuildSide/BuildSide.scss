@@ -115,6 +115,15 @@ $linkedin-feed-bg: #eef3f8;
   margin: 8px 0 0;
 }
 
+.linkedin-profile-partnership {
+  max-width: 460px;
+  margin: 12px 0 0;
+  color: rgba(250, 245, 247, 0.72);
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .linkedin-profile-actions {
   display: flex;
   flex-wrap: wrap;
@@ -153,6 +162,7 @@ $linkedin-feed-bg: #eef3f8;
   background: linear-gradient(135deg, rgba(126, 200, 184, 0.35) 0%, rgba(93, 169, 201, 0.28) 100%);
   color: $light-text;
   box-shadow: 0 2px 12px rgba(93, 169, 201, 0.22);
+  cursor: pointer;
 
   &:hover {
     border-color: rgba(126, 200, 184, 0.75);
@@ -165,6 +175,32 @@ $linkedin-feed-bg: #eef3f8;
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+}
+
+.client-work-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.client-work-category {
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 -1px 12px;
+  padding: 6px 12px;
+  border: 1px solid rgba(126, 200, 184, 0.42);
+  border-bottom: 0;
+  border-radius: 9px 9px 0 0;
+  background: #1d343b;
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.14);
+  color: $nerd-mint;
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 .build-work-see-more {
@@ -372,19 +408,6 @@ $linkedin-feed-bg: #eef3f8;
 .build-timeline-company-parent {
   font-weight: 400;
   color: rgba(126, 200, 184, 0.34);
-}
-
-.build-side .social-feed--linkedin {
-  max-height: none;
-  min-height: 0;
-}
-
-.build-side .social-feed--embedded {
-  margin-top: 8px;
-}
-
-#build-activity.side-block--build {
-  padding-bottom: 8px;
 }
 
 @media (max-width: 768px) {

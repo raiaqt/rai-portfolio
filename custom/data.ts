@@ -117,8 +117,20 @@ const experience = [
 
 const clientWork = [
   {
+    title: "Barangay Kapitolyo",
+    category: "Government",
+    from: "Barangay services platform · Pasig City",
+    text: "A resident-facing platform that makes barangay information, services, projects, and public resources easier to access.",
+    link: "https://kapitolyo-app.pages.dev/",
+    year: "2026",
+    github: false,
+    image: "kapitolyo-app.png",
+  },
+  {
     title: "The Creekside School",
+    category: "Foreign",
     from: "Nonpublic school · San Jose, CA",
+    text: "A clear, welcoming school website that helps families understand Creekside's programs, approach, and community.",
     link: "https://www.creeksideschool.org/",
     year: "2026",
     github: false,
@@ -126,7 +138,9 @@ const clientWork = [
   },
   {
     title: "Clay Ventures Lab",
+    category: "Startup",
     from: "AI-powered SME incubator · Metro Manila, Philippines",
+    text: "A digital presence for an incubator helping small businesses explore ideas, build ventures, and grow with AI.",
     link: "https://www.instagram.com/clayventureslab/",
     year: "2026",
     github: false,
@@ -193,12 +207,10 @@ const linkedinFeed = {
     parent: "Aboitiz Power",
   },
   tagline: "Tech nerd by day · shipping code & leading teams",
+  partnershipPitch:
+    "I partner with founders, teams, and organizations to turn ideas and operational challenges into thoughtful software, from early product direction to launch.",
   seeMoreLabel: "Connect on LinkedIn",
-  buildLabel: "Build your app",
-};
-
-const buildContact = {
-  inquiryMailto: "mailto:rsquitoriano@gmail.com?subject=Project%20inquiry",
+  buildLabel: "Start a conversation",
 };
 
 export default {
@@ -216,5 +228,4 @@ export default {
   links,
   instagram,
   linkedinFeed,
-  buildContact,
 };
