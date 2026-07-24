@@ -5,6 +5,7 @@ type UseSlowAutoScrollOptions = {
   speed?: number;
   pauseAtEndMs?: number;
   resumeDelayMs?: number;
+  pauseOnInteraction?: boolean;
 };
 
 export function useSlowAutoScroll({
@@ -12,6 +13,7 @@ export function useSlowAutoScroll({
   speed = 0.16,
   pauseAtEndMs = 2400,
   resumeDelayMs = 1200,
+  pauseOnInteraction = true,
 }: UseSlowAutoScrollOptions = {}) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -126,13 +128,15 @@ export function useSlowAutoScroll({
 
     frame = window.requestAnimationFrame(tick);
 
-    element.addEventListener("mouseenter", onPointerEnter);
-    element.addEventListener("mouseleave", onPointerLeave);
-    element.addEventListener("focusin", onPointerEnter);
-    element.addEventListener("focusout", onPointerLeave);
-    element.addEventListener("touchstart", onPointerEnter, { passive: true });
-    element.addEventListener("touchend", onUserScroll, { passive: true });
-    element.addEventListener("wheel", onUserScroll, { passive: true });
+    if (pauseOnInteraction) {
+      element.addEventListener("mouseenter", onPointerEnter);
+      element.addEventListener("mouseleave", onPointerLeave);
+      element.addEventListener("focusin", onPointerEnter);
+      element.addEventListener("focusout", onPointerLeave);
+      element.addEventListener("touchstart", onPointerEnter, { passive: true });
+      element.addEventListener("touchend", onUserScroll, { passive: true });
+      element.addEventListener("wheel", onUserScroll, { passive: true });
+    }
 
     const startTimer = window.setTimeout(() => {
       if (!hovering) {
@@ -147,15 +151,17 @@ export function useSlowAutoScroll({
         window.clearTimeout(resumeTimer);
       }
       viewObserver.disconnect();
-      element.removeEventListener("mouseenter", onPointerEnter);
-      element.removeEventListener("mouseleave", onPointerLeave);
-      element.removeEventListener("focusin", onPointerEnter);
-      element.removeEventListener("focusout", onPointerLeave);
-      element.removeEventListener("touchstart", onPointerEnter);
-      element.removeEventListener("touchend", onUserScroll);
-      element.removeEventListener("wheel", onUserScroll);
+      if (pauseOnInteraction) {
+        element.removeEventListener("mouseenter", onPointerEnter);
+        element.removeEventListener("mouseleave", onPointerLeave);
+        element.removeEventListener("focusin", onPointerEnter);
+        element.removeEventListener("focusout", onPointerLeave);
+        element.removeEventListener("touchstart", onPointerEnter);
+        element.removeEventListener("touchend", onUserScroll);
+        element.removeEventListener("wheel", onUserScroll);
+      }
     };
-  }, [enabled, speed, pauseAtEndMs, resumeDelayMs]);
+  }, [enabled, speed, pauseAtEndMs, resumeDelayMs, pauseOnInteraction]);
 
   return scrollRef;
 }

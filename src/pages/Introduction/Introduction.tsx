@@ -41,6 +41,9 @@ const Introduction: React.FC = () => {
             <span className="tagline-bracket"> /&gt;</span>
             <span className="tagline-cursor" aria-hidden="true">_</span>
           </p>
+          <p className="introduction-capability-statement">
+            {nerdSide.capabilityStatement}
+          </p>
           <a
             className="introduction-link"
             href={links.website}

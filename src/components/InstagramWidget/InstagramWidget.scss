@@ -91,18 +91,12 @@ $feed-preview-height-desktop: 560px;
   .social-feed-scroll {
     height: 100%;
     max-height: $feed-preview-height;
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(244, 194, 215, 0.28) transparent;
+    scrollbar-width: none;
 
     &::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(244, 194, 215, 0.28);
-      border-radius: 3px;
+      display: none;
     }
   }
 
@@ -129,6 +123,8 @@ $feed-preview-height-desktop: 560px;
     border-radius: 0;
     overflow: hidden;
     position: relative;
+    pointer-events: none;
+    user-select: none;
     background: transparent;
     box-shadow: none;
 

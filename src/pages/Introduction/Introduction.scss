@@ -249,9 +249,21 @@
   font-size: clamp(15px, 2vw, 20px);
   font-weight: 400;
   color: $nerd-mint;
-  margin: 0 0 32px;
+  margin: 0 0 16px;
   letter-spacing: 0.02em;
   line-height: 1.45;
+}
+
+.introduction-capability-statement {
+  max-width: 440px;
+  margin: 0 0 26px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(126, 200, 184, 0.48);
+  color: rgba(250, 245, 247, 0.72);
+  font-family: "Raleway", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.65;
 }
 
 .tagline-bracket {
