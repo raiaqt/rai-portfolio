@@ -30,6 +30,8 @@ const Introduction: React.FC = () => {
           </h1>
 
           <p className="introduction-roles">
+            <span className="role-dev">CTO</span>
+            <span className="role-x" aria-hidden="true">×</span>
             <span className="role-dev">{nerdSide.badge}</span>
             <span className="role-x" aria-hidden="true">×</span>
             <span className="role-movement">{movementSide.badge}</span>
@@ -50,7 +52,7 @@ const Introduction: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {links.website.replace("https://", "")}
+            See what I build →
           </a>
         </div>
 

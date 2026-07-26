@@ -11,14 +11,17 @@ type InstagramWidgetProps = {
 
 const InstagramWidget: React.FC<InstagramWidgetProps> = ({ embedded = false }) => {
   const { instagram, links } = data;
+  const allowsManualScroll = window.matchMedia(
+    "(min-width: 769px) and (hover: hover) and (pointer: fine)"
+  ).matches;
   useElfsightPlatform();
   const { embedRef, isLoading } = useElfsightFeedReady();
   const scrollRef = useSlowAutoScroll({
     enabled: !isLoading,
-    speed: 0.45,
+    speed: 0.75,
     pauseAtEndMs: 500,
     resumeDelayMs: 0,
-    pauseOnInteraction: false,
+    pauseOnInteraction: allowsManualScroll,
   });
 
   const feed = (

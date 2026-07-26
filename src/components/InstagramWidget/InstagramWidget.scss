@@ -233,10 +233,13 @@ $feed-preview-height-embedded: 380px;
 .social-feed--instagram .social-feed-scroll {
   height: 100%;
   max-height: $feed-preview-height-embedded;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .social-feed--instagram .social-feed-fade {
@@ -254,10 +257,32 @@ $feed-preview-height-embedded: 380px;
   background: $instagram-feed-bg;
   border-radius: 0;
   box-shadow: none;
+  pointer-events: none;
+  user-select: none;
 
   iframe {
     background: $instagram-feed-bg;
     min-height: 300px !important;
+  }
+}
+
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+  .social-feed--hero .social-feed-scroll,
+  .social-feed--instagram .social-feed-scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(244, 194, 215, 0.35) transparent;
+
+    &::-webkit-scrollbar {
+      display: block;
+      width: 6px;
+    }
+  }
+
+  .social-feed--hero .social-feed-embed,
+  .social-feed--instagram .social-feed-embed {
+    pointer-events: auto;
+    user-select: auto;
   }
 }
 
