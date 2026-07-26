@@ -334,12 +334,14 @@
   font-size: 13px;
   font-weight: 700;
 
-  > span {
-    font-size: 17px;
+  > svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
     transition: transform 0.2s ease;
   }
 
-  .link-card:hover & > span {
+  .link-card:hover & > svg {
     transform: translate(2px, -2px);
   }
 }

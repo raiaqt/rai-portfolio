@@ -16,7 +16,10 @@ const BuildSide: React.FC = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showInquiryModal, setShowInquiryModal] = useState(false);
 
-  const visibleClientWork = showAllClientWork ? clientWork : clientWork.slice(0, 2);
+  const activeClientWork = clientWork.filter((project) => !project.hidden);
+  const visibleClientWork = showAllClientWork
+    ? activeClientWork
+    : activeClientWork.slice(0, 2);
   const visibleProjects = showAllProjects ? projects : projects.slice(0, 1);
 
   return (
@@ -101,7 +104,7 @@ const BuildSide: React.FC = () => {
             </div>
           ))}
         </div>
-        {clientWork.length > 1 && (
+        {activeClientWork.length > 1 && (
           <button
             type="button"
             className={`build-work-see-more${showAllClientWork ? " build-work-see-more--expanded" : ""}`}

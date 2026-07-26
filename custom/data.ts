@@ -120,6 +120,7 @@ const experience = [
 const clientWork = [
   {
     title: "Barangay Kapitolyo",
+    hidden: true,
     category: "Government",
     from: "Barangay services platform · Pasig City",
     text: "A resident-facing platform that makes barangay information, services, projects, and public resources easier to access.",
