@@ -38,10 +38,12 @@ export function useSlowAutoScroll({
     let hovering = false;
     let inView = false;
     let autoScrolling = false;
+    let scrollPosition = element.scrollTop;
     let resumeTimer: number | undefined;
 
     const setScrollTop = (value: number) => {
       autoScrolling = true;
+      scrollPosition = value;
       element.scrollTop = value;
       window.requestAnimationFrame(() => {
         autoScrolling = false;
@@ -85,6 +87,7 @@ export function useSlowAutoScroll({
         return;
       }
 
+      scrollPosition = element.scrollTop;
       pause();
       scheduleResume();
     };
@@ -106,7 +109,7 @@ export function useSlowAutoScroll({
     const tick = (now: number) => {
       if (pauseUntil > 0 && now >= pauseUntil) {
         const maxScroll = element.scrollHeight - element.clientHeight;
-        if (element.scrollTop >= maxScroll - 2) {
+        if (scrollPosition >= maxScroll - 2) {
           setScrollTop(0);
         }
         resume();
@@ -114,7 +117,7 @@ export function useSlowAutoScroll({
 
       const maxScroll = element.scrollHeight - element.clientHeight;
       if (!paused && inView && maxScroll > 8) {
-        const nextScrollTop = element.scrollTop + speed;
+        const nextScrollTop = scrollPosition + speed;
         if (nextScrollTop >= maxScroll) {
           setScrollTop(maxScroll);
           pause(pauseAtEndMs);
