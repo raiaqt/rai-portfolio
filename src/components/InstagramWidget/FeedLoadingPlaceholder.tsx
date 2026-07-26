@@ -16,11 +16,6 @@ const FeedLoadingPlaceholder: React.FC<FeedLoadingPlaceholderProps> = ({
     aria-live="polite"
     aria-label="Loading Instagram feed"
   >
-    <div className="social-feed-placeholder-status">
-      <span className="social-feed-placeholder-label">loading feed</span>
-      <span className="social-feed-placeholder-spinner" aria-hidden="true" />
-    </div>
-
     <div className="social-feed-placeholder-grid" aria-hidden="true">
       {Array.from({ length: PLACEHOLDER_POSTS }, (_, index) => (
         <article key={index} className="social-feed-placeholder-card">
