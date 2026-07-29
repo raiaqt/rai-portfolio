@@ -5,7 +5,7 @@ import data from "../../../custom/data";
 import "./Introduction.scss";
 
 const Introduction: React.FC = () => {
-  const { introduction, links } = data;
+  const { introduction } = data;
   const { nerdSide, movementSide } = introduction;
 
   return (
@@ -48,9 +48,7 @@ const Introduction: React.FC = () => {
           </p>
           <a
             className="introduction-link"
-            href={links.website}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#nerd-side"
           >
             See what I build →
           </a>
