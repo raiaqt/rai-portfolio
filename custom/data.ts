@@ -26,7 +26,7 @@ const introduction = {
     badge: "developer",
     tagline: "tech nerd by day",
     capabilityStatement:
-      "I turn fuzzy ideas into useful products, shaping strategy, building full-stack systems, putting AI to work, and leading teams from first sketch to launch.",
+      "I turn ideas into useful products, shaping strategy, building full-stack systems, putting AI to work, and leading teams from first sketch to launch.",
     hint: "LinkedIn-style profile, activity feed, and featured projects.",
   },
   movementSide: {
