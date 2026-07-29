@@ -26,7 +26,7 @@ const introduction = {
     badge: "developer",
     tagline: "tech nerd by day",
     capabilityStatement:
-      "I turn ideas into useful products, shaping strategy, building full-stack systems, putting AI to work, and leading teams from first sketch to launch.",
+      "I turn ideas into useful products, shaping strategy, building full-stack systems, and leading teams from first sketch to launch.",
     hint: "LinkedIn-style profile, activity feed, and featured projects.",
   },
   movementSide: {
@@ -120,7 +120,6 @@ const experience = [
 const clientWork = [
   {
     title: "Barangay Kapitolyo",
-    hidden: true,
     category: "Government",
     from: "Barangay services platform · Pasig City",
     text: "A resident-facing platform that makes barangay information, services, projects, and public resources easier to access.",
